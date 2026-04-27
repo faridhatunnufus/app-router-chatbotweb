@@ -1,0 +1,31 @@
+.card {
+  background-color: #f9f7fc; /* Warna ungu sangat muda */
+  padding: 24px;
+  border-radius: 16px;
+  height: 100%; /* Agar tinggi semua kartu sama dalam grid */
+}
+
+.iconWrapper {
+  margin-bottom: 16px;
+  /* Jika ikon Anda perlu styling khusus, tambahkan di sini */
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+.icon {
+  position: relative;
+  font-size: 30px;
+  color: #000;
+}

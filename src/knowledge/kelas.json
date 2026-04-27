@@ -1,0 +1,95 @@
+{
+  "kelas_umum": [
+    {
+      "tipe_kelas": "Umum",
+      "lokasi": "Griya Sinau Syahir",
+      "jadwal_operasional": "Senin - Jumat, 10.00 - 20.30",
+      "durasi_per_pertemuan": "60 menit",
+      "durasi_program": "1 bulan",
+      "kapasitas_siswa": "10-15 orang",
+      "biaya_bulanan": 100000,
+      "daftar_program": [
+        {
+          "jenjang": "Pra-Sekolah",
+          "kriteria_usia": "4-6 tahun",
+          "mata_pelajaran": ["Calistung (Baca, Tulis, Hitung)"]
+        },
+        {
+          "jenjang": "SD",
+          "kriteria_usia": "7-13 tahun",
+          "mata_pelajaran": [
+            "Agama",
+            "PPKN",
+            "IPA",
+            "IPS",
+            "Matematika",
+            "Bahasa Inggris",
+            "Bahasa Indonesia",
+            "Bahasa Jawa"
+          ]
+        },
+        {
+          "jenjang": "SMP",
+          "kriteria_usia": "13-17 tahun",
+          "mata_pelajaran": [
+            "Agama",
+            "PPKN",
+            "IPA",
+            "IPS",
+            "Matematika",
+            "Bahasa Inggris",
+            "Bahasa Indonesia",
+            "Fisika",
+            "Biologi",
+            "Bahasa Jawa",
+            "Informatika"
+          ]
+        },
+        {
+          "jenjang": "SMA",
+          "kriteria_usia": "17-19 tahun",
+          "mata_pelajaran": [
+            "Agama",
+            "PPKN",
+            "IPA",
+            "IPS",
+            "Matematika",
+            "Bahasa Inggris",
+            "Bahasa Indonesia",
+            "Fisika",
+            "Biologi",
+            "Kimia",
+            "Ekonomi",
+            "Sosiologi",
+            "Geografi",
+            "Bahasa Jawa",
+            "Informatika"
+          ]
+        }
+      ]
+    }
+  ],
+  "kelas_privat": [
+    {
+      "tipe_kelas": "Privat",
+      "lokasi_belajar": "Griya Sinau Syahir (GSS)",
+      "jenjang": "Pra-sekolah hingga SMA",
+      "mata_pelajaran": "Semua mata pelajaran sesuai jenjang",
+      "durasi_per_pertemuan": "60 menit",
+      "kapasitas_siswa": "1-2 anak",
+      "biaya_bulanan": 120000,
+      "jadwal": "Senin - Jumat, 14.00 - 20.30"
+    },
+    {
+      "tipe_kelas": "Privat",
+      "lokasi_belajar": "Rumah Siswa",
+      "jenjang": "Pra-sekolah hingga SMA",
+      "mata_pelajaran": "Semua mata pelajaran sesuai jenjang",
+      "durasi_per_pertemuan": "60 menit",
+      "kapasitas_siswa": "1-2 anak",
+      "biaya_bulanan": "200.000 - 250.000",
+      "jadwal": "Menyesuaikan siswa"
+    }
+  ]
+}
+

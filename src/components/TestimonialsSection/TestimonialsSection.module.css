@@ -1,0 +1,51 @@
+/* src/components/TestimonialsSection/TestimonialsSection.module.css */
+
+.wrapper {
+  padding: 80px 0; /* Padding vertikal diubah ke wrapper */
+  background-color: #f3f4f6; /* Warna latar belakang abu-abu muda */
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 60px;
+}
+
+/* --- STYLE BARU UNTUK SLIDER --- */
+
+.sliderContainer {
+  /* Memberi sedikit ruang di kiri dan kanan untuk bayangan kartu */
+  padding: 0 20px;
+}
+
+/* Memberi jarak antar kartu */
+.cardPadding {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 1200px) {
+  .sliderContainer :global(.slick-prev) {
+    left: -25px;
+  }
+  .sliderContainer :global(.slick-next) {
+    right: -25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+}

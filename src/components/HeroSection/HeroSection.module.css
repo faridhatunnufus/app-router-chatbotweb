@@ -1,0 +1,171 @@
+/* Container Utama */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 24px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 48px;
+}
+
+/* Kolom Kiri: Teks */
+.textContainer {
+  flex: 1;
+  max-width: 45%;
+  position: relative;
+  z-index: 2;
+}
+
+.heading {
+  /* Class ini sekarang hanya sebagai container, properti spesifik dipindah ke dalam span */
+  line-height: 1.2;
+  margin: 0;
+}
+
+.mainHeading {
+  display: block; /* Membuat teks ini mengambil satu baris penuh */
+  font-size: 2.7rem; /* Ukuran font besar untuk baris pertama */
+  font-weight: 900;
+  color: #2c3e50;
+  margin-bottom: 8px; /* Memberi sedikit jarak ke baris kedua */
+}
+
+.subHeading {
+  display: block; /* Membuat teks ini mengambil satu baris penuh */
+  font-size: 2rem; /* Ukuran font lebih kecil, sesuai permintaan Anda */
+  font-weight: 800;
+  color: #f39c12;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.description {
+  font-size: 1rem; /* 18px */
+  line-height: 1.6;
+  color: #34495e; /* Warna abu-abu gelap */
+  margin-top: 24px;
+}
+
+/* Kolom Kanan: Gambar */
+.imageContainer {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+  z-index: 1;
+}
+
+.mainImageWrapper {
+  position: relative;
+  z-index: 3;
+}
+
+.mainImage {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
+
+/* .heroIllust{
+  width: 500px;
+  height: 500px;
+}
+
+.heroIllust path{
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 2px;
+} */
+
+/* Bentuk Dekoratif */
+.shapeYellowBackground {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 400px;
+  background-color: #f1c40f; /* Warna kuning dari desain */
+  border-radius: 80px 200px 80px 200px;
+  transform: rotate(-15deg);
+  z-index: 2;
+}
+
+.shapePurple {
+  position: absolute;
+  top: 70%;
+  left: 10px; /* Nilai negatif agar keluar dari sisi kiri container */
+  width: 40px;
+  height: 40px;
+  background-color: #8e44ad;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.shapeGreen {
+  position: absolute;
+  top: 15%; /* Nilai negatif agar naik ke atas */
+  right: 1px;
+  width: 40px;
+  height: 40px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  z-index: 4; /* Di paling atas */
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .textContainer {
+    max-width: 100%;
+    order: 2; /* Teks di bawah */
+  }
+
+  .imageContainer {
+    order: 1; /* Gambar di atas */
+    width: 100%;
+    transform: none; /* Hapus efek scale */
+    margin-bottom: 24px; /* Beri jarak POSITIF ke teks di bawahnya */
+    min-height: auto; /* Biarkan tingginya menyesuaikan konten */
+  }
+
+  /* Kita bisa atur ulang ukuran font di sini agar tidak terlalu besar */
+  .mainHeading {
+    font-size: 2.2rem;
+  }
+
+  .subHeading {
+    font-size: 1.8rem;
+  }
+
+  .shapeYellowBackground {
+    display: none;
+  }
+}
+
+/* Penyesuaian lebih lanjut untuk layar yang lebih kecil */
+@media (max-width: 480px) {
+  .mainHeading {
+    font-size: 2rem;
+  }
+  .subHeading {
+    font-size: 1.6rem;
+  }
+
+  .shapeYellowBackground {
+    display: none;
+  }
+}

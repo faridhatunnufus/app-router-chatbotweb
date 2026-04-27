@@ -1,0 +1,7 @@
+.mainContent {
+  /* Memberi jarak dari atas sebesar tinggi Navbar (80px) */
+  /* agar konten tidak tertutup oleh Navbar yang fixed. */
+  padding-top: 80px;
+  position: relative; /* PENTING: Untuk mengaktifkan z-index */
+  z-index: 1; /* PENTING: Menempatkan konten utama di lapisan bawah */
+}

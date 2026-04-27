@@ -1,0 +1,7 @@
+.text {
+  color: #fff;
+}
+
+.text.hovered {
+  color: steelblue;
+}

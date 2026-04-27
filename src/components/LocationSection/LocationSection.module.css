@@ -1,0 +1,127 @@
+.wrapper {
+  padding: 80px 24px;
+  background-color: #f9f7fc;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  /* Kolom gambar (kiri) sedikit lebih kecil dari kolom teks (kanan) */
+  grid-template-columns: 5fr 6fr; 
+  align-items: center;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* GAMBAR (sekarang di kiri) */
+.imageContainer {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Rata kiri */
+}
+
+/* KARTU PUTIH (sekarang di kanan) */
+.card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  z-index: 2;
+  /* Diubah menjadi margin-left negatif agar menjorok ke kiri */
+  margin-left: -80px; 
+    /* --- TAMBAHAN BARU --- */
+  cursor: pointer; /* Mengubah kursor menjadi tangan saat di atas kartu */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek hover pada kartu */
+.card:hover {
+  transform: translateY(-8px); /* Sedikit mengangkat kartu ke atas */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Bayangan lebih jelas */
+}
+
+/* --- TAMBAHAN BARU --- */
+/* Style untuk tag Link agar tidak ada garis bawah default */
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.eyebrow {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8e44ad;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2c3e50;
+  margin-bottom: 24px;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Bentuk ungu di belakang gambar */
+.purpleShape {
+  position: absolute;
+  top: 50%;
+  right: 50%; /* Diubah agar muncul dari kanan */
+  transform: translate(40%, -50%); /* Disesuaikan */
+  width: 100%;
+  height: 90%;
+  background-color: #e1dced;
+  /* Diubah agar kurva ada di kanan */
+  border-radius: 0 200px 200px 0; 
+  z-index: 0;
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .card {
+    /* Margin direset di mobile */
+    margin-left: 0; 
+    order: 2;
+    padding: 32px;
+  }
+  .imageContainer {
+    order: 1;
+    min-height: 400px;
+    justify-content: center;
+  }
+  .purpleShape {
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    right: auto;
+  }
+  .image {
+    width: 70%;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+}

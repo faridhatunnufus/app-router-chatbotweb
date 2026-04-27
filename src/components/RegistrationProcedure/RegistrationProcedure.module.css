@@ -1,0 +1,101 @@
+/* src/components/RegistrationProcedure/RegistrationProcedure.module.css */
+
+.pageWrapper {
+  padding: 80px 24px;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+}
+
+.procedureList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.procedureItem {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2ecc71;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stepContent h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+}
+
+.stepContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+}
+
+.ctaSection {
+  background-color: #f9f7fc;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+}
+
+.ctaSection p {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 500;
+  margin: 0 0 24px 0;
+}
+
+.ctaButton {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #8e44ad; /* Warna ungu */
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: #702f8a;
+  transform: translateY(-3px);
+}

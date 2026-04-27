@@ -1,0 +1,52 @@
+.button {
+  padding: 12px 28px;
+  border-radius: 50px; /* Fully rounded */
+  font-weight: 600; /* Semi-bold */
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+/* Primary variant (kuning) */
+.primary {
+  background-color: #fdb813; /* Warna kuning dari screenshot */
+  color: #ffffff;
+}
+
+.primary:hover {
+  background-color: #e6a611; /* Versi lebih gelap untuk hover */
+}
+
+/* Secondary variant (bisa kita definisikan nanti jika perlu) */
+.secondary {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+/* Accent variant (oranye) */
+.accent {
+  background-color: #f39c12; /* Warna oranye yang lebih cerah */
+  color: #2c3e50;
+}
+
+.accent:hover {
+  background-color: #e68e00;
+}
+
+/* Purple variant */
+.purple {
+  background-color: #8e44ad; /* Warna ungu yang sudah kita gunakan */
+  color: #ffffff;
+  border: none;
+}
+
+.purple:hover {
+  background-color: #7b3a96; /* Versi lebih gelap untuk hover */
+}

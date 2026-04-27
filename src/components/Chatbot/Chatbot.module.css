@@ -1,0 +1,331 @@
+/* Container utama di pojok kanan bawah */
+.floatingContainer {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+  font-family: "Inter", sans-serif;
+}
+
+/* Tombol Lingkaran (Floating Action Button) */
+.chatButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #1e40af; /* Biru Branding Griya Sinau */
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatButton:hover {
+  transform: scale(1.1);
+  background-color: #1d358e;
+}
+
+/* Jendela Chat */
+.chatWindow {
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+/* Header Biru */
+.header {
+  background: #1e40af;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  background: white;
+  color: #1e40af;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 0 5px;
+}
+
+.closeBtn:hover {
+  opacity: 1;
+}
+
+/* Area Percakapan */
+.messageArea {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Baris Pesan (User di kanan, AI di kiri) */
+.userRow {
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.aiRow {
+  align-self: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Gelembung Chat */
+.bubble {
+  padding: 10px 14px;
+  border-radius: 14px;
+  max-width: 85%;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.userRow .bubble {
+  background: #1e40af;
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+
+.aiRow .bubble {
+  background: #e5e7eb;
+  color: #1f2937;
+  border-bottom-left-radius: 2px;
+}
+
+/* Bagian Input */
+.inputArea {
+  padding: 15px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 8px;
+  background: white;
+}
+
+.inputArea input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.inputArea input:focus {
+  border-color: #0000;
+}
+
+.inputArea input {
+  background-color: #0000;
+  cursor: allowed;
+}
+
+.sendBtn {
+  background: #1e40af;
+  color: white;
+  border: none;
+  padding: 0 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.sendBtn:hover:not(:disabled) {
+  background: #1d358e;
+}
+
+.sendBtn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Placeholder tetap abu-abu agar tidak membingungkan */
+.chatInput::placeholder {
+  color: #9ca3af;
+}
+
+.chatInput {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+
+  /* Pastikan dua baris ini ada dan benar */
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/* Biar tulisannya hitam pekat bahkan saat sedang diketik (focus) */
+.chatInput:focus {
+  color: #000000;
+  border-color: #1e40af;
+}
+
+/* .floatingContainer {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+  font-family: "Inter", sans-serif;
+} */
+/* 
+.chatButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #1e40af; 
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+} */
+
+/* .chatButton:hover {
+  transform: scale(1.1);
+}
+
+.chatWindow {
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+ */
+/* .header {
+  background: #1e40af;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.avatar {
+  background: white;
+  color: #1e40af;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.messageArea {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.userRow {
+  align-self: flex-end;
+}
+.aiRow {
+  align-self: flex-start;
+}
+
+.bubble {
+  padding: 10px 14px;
+  border-radius: 14px;
+  max-width: 85%;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.userRow .bubble {
+  background: #1e40af;
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+.aiRow .bubble {
+  background: #e5e7eb;
+  color: #1f2937;
+  border-bottom-left-radius: 2px;
+}
+
+.inputArea {
+  padding: 15px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 8px;
+}
+
+.inputArea input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+}
+
+.inputArea button {
+  background: #1e40af;
+  color: white;
+  border: none;
+  padding: 0 15px;
+  border-radius: 8px;
+  cursor: pointer;
+} */

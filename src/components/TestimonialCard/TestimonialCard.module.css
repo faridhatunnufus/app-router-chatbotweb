@@ -1,0 +1,107 @@
+/* src/components/TestimonialCard/TestimonialCard.module.css */
+
+.card {
+  position: relative;
+  border-radius: 20px;
+  padding: 20px;
+  padding-top: 60px; /* Ruang untuk infoBox */
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.infoBox {
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  background-color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  text-align: left;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.achievement {
+  font-size: 0.8rem;
+  color: #555;
+  margin: 4px 0 0 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  position: relative;
+  border-radius: 12px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  transform: translate(0, 30px);
+}
+
+.quoteBox {
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.quoteText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0;
+  font-style: italic;
+  min-height: 150px;
+}
+
+/* --- VARIAN WARNA --- */
+
+/* Oranye */
+.orange {
+  background-color: #fff3e0; /* Oranye muda */
+}
+.orange .quoteBox {
+  background-color: #fb8c00; /* Oranye tua */
+}
+.orange .imageWrapper {
+  background-color: #ffe0b2; /* Oranye lebih muda */
+}
+
+/* Ungu */
+.purple {
+  background-color: #f3e5f5; /* Ungu muda */
+}
+.purple .quoteBox {
+  background-color: #ab47bc; /* Ungu tua */
+}
+.purple .imageWrapper {
+  background-color: #e1bee7; /* Ungu lebih muda */
+}
+
+/* Hijau */
+.green {
+  background-color: #e8f5e9; /* Hijau muda */
+}
+.green .quoteBox {
+  background-color: #4caf50; /* Hijau tua */
+}
+.green .imageWrapper {
+  background-color: #c8e6c9; /* Hijau lebih muda */
+}

@@ -1,0 +1,30 @@
+.wrapper {
+  padding: 80px 24px;
+  background-color: #f9f7fc; /* Warna ungu muda */
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+.buttonWrapper .button {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+}

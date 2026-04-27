@@ -1,0 +1,43 @@
+{
+  "tentang_kami": [
+    {
+      "sejarah": "Bimbingan Belajar Griya Sinau Syahir didirikan pada tanggal 1 Februari 2022 oleh Ibu Tati Mei Lina Setyowati, S.Pd. Lembaga ini lahir dari sebuah kepedulian dan semangat untuk menyediakan pendampingan belajar yang berkualitas bagi para siswa. Kami melihat adanya kebutuhan akan sebuah lingkungan belajar yang tidak hanya fokus pada pencapaian nilai, tetapi juga pemahaman konsep yang mendalam dan tulus.",
+      "visi": "Menjadi lembaga bimbingan belajar terpercaya yang turut andil secara aktif dalam mencerdaskan kehidupan bangsa melalui pendidikan yang berpusat pada siswa.",
+      "misi": "Untuk mencapai visi tersebut, kami mengemban misi untuk 'bergerak dengan hati' dalam setiap proses belajar-mengajar, serta berupaya 'memulihkan' esensi dan semangat belajar yang otentik bagi setiap siswa.",
+      "tujuan": "Tujuan utama Griya Sinau Syahir adalah untuk membantu setiap siswa meningkatkan pemahaman materi dan meraih prestasi akademik yang lebih baik. Kami bertujuan untuk menjadi mitra strategis bagi orang tua dalam mendukung perkembangan pendidikan anak. Pada akhirnya, kami ingin menciptakan lingkungan belajar yang nyaman dan kondusif, di mana siswa dapat menemukan kembali kegembiraan dalam menimba ilmu."
+    }
+  ],
+  "kontak": [
+    {
+      "jam_operasional": "09.30 - 17.00",
+      "whatsapp": "085868147285",
+      "email": "kutbusyahrir@gmail.com",
+      "lokasi_bimbel": "Desa Sawangan RT 04 RW 03, Kec. Jeruklegi, Kab. Cilacap, Jawa Tengah"
+    }
+  ],
+  "testimoni": [
+    {
+      "nama" : "Putriani Nabila",
+      "peran" : "Siswa",
+      "pesan" : "Aku diterima di SMA N 1 Jeruklegi. Happy banget belajar di sini, temennya seru dan supportif, pengajarnya juga keren-keren banget karena bikin aku ngerti sama materinya."
+    }
+  ],
+  "pendaftaran": [
+    {
+      "langkah": 1,
+      "judul": "Isi Formulir Online",
+      "deskripsi": "Langkah pertama adalah mengisi formulir pendaftaran secara lengkap dan akurat melalui tombol yang tersedia di bawah ini. Pastikan semua data sudah benar sebelum mengirim."
+    },
+    {
+      "langkah": 2,
+      "judul": "Konfirmasi & Pembayaran",
+      "deskripsi": "Setelah formulir kami terima, tim kami akan menghubungi Anda melalui WhatsApp untuk konfirmasi data dan memberikan instruksi mengenai biaya pendaftaran dan SPP bulan pertama."
+    },
+    {
+      "langkah": 3,
+      "judul": "Selamat Bergabung!",
+      "deskripsi": "Setelah pembayaran terkonfirmasi, putra-putri Anda resmi menjadi siswa Griya Sinau Syahir. Jadwal les dan informasi selanjutnya akan dikirimkan melalui grup WhatsApp."
+    }
+  ]
+}
+

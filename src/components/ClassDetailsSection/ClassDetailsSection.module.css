@@ -1,0 +1,84 @@
+.wrapper {
+  position: relative;
+  padding: 100px 24px;
+  background-color: #f9f7fc; /* Warna ungu sangat muda */
+  overflow: hidden;
+}
+
+/* Elemen Latar Belakang */
+.backgroundGraphics {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  clip-path: ellipse(100% 70% at 0% 50%); /* Membuat efek lengkung */
+}
+
+.greenCircle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #a5d6a7; /* Hijau muda */
+  border-radius: 50%;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+}
+
+.orangeCircle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ffb74d; /* Oranye muda */
+  border-radius: 50%;
+  top: 20%;
+  left: 30%;
+}
+
+/* Konten Utama */
+.container {
+  position: relative;
+  z-index: 1; /* Pastikan konten berada di atas latar belakang */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 48px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  /* Geser grid ke kanan agar tidak tertutup gambar */
+  margin-left: 45%;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .bgImage, .greenCircle, .orangeCircle {
+    display: none; /* Sembunyikan latar belakang kompleks di mobile */
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+  .wrapper {
+    padding: 60px 24px;
+  }
+}

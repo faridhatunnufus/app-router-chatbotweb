@@ -1,0 +1,311 @@
+/* Style dasar untuk Navbar, Logo, dan Navigasi Desktop */
+.navbarWrapper {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  /* justify-content: space-between; <-- DIHAPUS */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logoText {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.highlightText {
+  color: #e91e63;
+}
+
+.desktopNav {
+  display: flex;
+  margin: 0 auto; /* <-- DITAMBAHKAN */
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 32px;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 28px 0;
+  transition: color 0.2s ease;
+}
+
+.navItem:hover .navLink {
+  color: #8e44ad;
+}
+
+.dropdownArrow {
+  margin-left: 8px;
+  border: solid #555;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.navItem:hover .dropdownArrow {
+  transform: rotate(-135deg);
+  margin-top: -4px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  width: 240px;
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.navItem:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.dropdownList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 12px 16px;
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdownLink:hover {
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
+.desktopCta {
+  display: none; /* Tidak lagi digunakan */
+}
+
+/* Style Untuk Responsif */
+.hamburgerButton {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1500;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburgerLine {
+  width: 25px;
+  height: 3px;
+  background-color: #2c3e50;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.line1.menuOpen {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.line2.menuOpen {
+  opacity: 0;
+}
+.line3.menuOpen {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0; /* Menu sekarang menutupi dari atas */
+  right: 0; /* Berada di sisi kanan */
+  left: auto; /* Hapus aturan posisi kiri */
+  width: 85%; /* Lebar menu 85% dari layar */
+  max-width: 400px; /* Tapi tidak akan lebih lebar dari 400px */
+  height: 100vh; /* Tinggi penuh layar */
+  background-color: #ffffff;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1); /* Bayangan di sisi kiri */
+  padding: 80px 32px 40px 32px; /* Padding atas untuk memberi ruang navbar */
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 1400;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Rata kiri */
+  justify-content: flex-start; /* Mulai dari atas */
+  gap: 32px;
+}
+
+.mobileMenu.menuOpen {
+  transform: translateX(0);
+}
+
+.mobileNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+}
+
+.mobileNavList a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.mobileCta {
+  margin-top: 24px;
+  display: none; /* Tidak lagi digunakan */
+}
+
+.activeLink {
+  font-weight: 700;
+  color: #8e44ad;
+}
+
+/* --- STYLE BARU UNTUK MOBILE DROPDOWN --- */
+
+.mobileNavItem {
+  width: 100%; /* Membuat setiap item mengambil lebar penuh */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Mengubah tampilan tombol dropdown agar seperti link */
+.mobileDropdownToggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Mengganti class `a` menjadi `.mobileLink` agar bisa ditargetkan */
+.mobileLink {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+/* Panah dropdown di mobile */
+.mobileDropdownArrow {
+  border: solid #555;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+/* Rotasi panah saat dropdown terbuka */
+.arrowOpen {
+  transform: rotate(-135deg);
+}
+
+/* Daftar submenu */
+.mobileSubmenu {
+  list-style: none;
+  padding: 16px 0 0 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.mobileSubmenuLink {
+  font-size: 1.2rem; /* Ukuran font lebih kecil untuk submenu */
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mobileSubmenuLink:hover {
+  color: #8e44ad;
+}
+
+/* --- AKHIR STYLE BARU --- */
+
+/* Cari blok media query ini di file Anda */
+@media (max-width: 992px) {
+  .container {
+    /* <-- TAMBAHKAN BLOK INI */
+    justify-content: space-between;
+  }
+
+  .desktopNav,
+  .desktopCta {
+    display: none;
+  }
+  .hamburgerButton {
+    display: flex;
+  }
+}
