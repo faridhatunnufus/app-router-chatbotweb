@@ -7,81 +7,64 @@ export async function POST(req: Request) {
     const { message } = await req.json();
     const vectorStore = await getVectorStore();
 
-    // 1. RETRIEVAL: Similarity Search [cite: 161, 176]
-    // Mencari 3 chunk paling relevan berdasarkan Cosine Similarity [cite: 185]
-    const results = await vectorStore.similaritySearchWithScore(message, 3);
-
-    // 2. DECISION NODE: Cek Relevansi [cite: 163]
-    // Jika skor terlalu tinggi (jarak jauh), berarti data tidak ditemukan
-    const isFound = results.length > 0 && results[0][1] < 0.6;
-
-    if (!isFound) {
-      return NextResponse.json({
-        answer:
-          "Maaf, informasi tersebut belum tersedia di database Griya Sinau Syahir. Silakan tanyakan hal lain terkait program atau biaya les.",
-      });
-    }
-
-    // 3. GENERATION: Susun Prompt & Tanya Gemini [cite: 162, 186]
+    // --- FASE 5: RETRIEVAL ---
+    const results = await vectorStore.similaritySearchWithScore(message, 2);
     const context = results.map(([doc]) => doc.pageContent).join("\n");
-    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
+    // --- FASE 6: AUGMENTATION (Penggabungan) ---
+    // Di sini kita tampilkan output nyata yang dikirim ke AI
     const prompt = `
-      Kamu adalah asisten virtual ramah dari Griya Sinau Syahir.
-      Gunakan konteks di bawah ini untuk menjawab pertanyaan secara akurat.
-      
-      KONTEKS DATA:
-      ${context}
+  Anda adalah Customer Service resmi Griya Sinau Syahir yang ramah, profesional, dan solutif.
+  
+  TUGAS ANDA:
+  Ubah DATA REFERENSI di bawah ini menjadi jawaban yang mengalir alami (Human-like). 
+  JANGAN gunakan format daftar (list) atau simbol bintang (**) yang berlebihan seperti di data mentah.
+  
+  FORMAT JAWABAN:
+  1. Mulailah dengan sapaan hangat.
+  2. Berikan jawaban singkat dan padat di kalimat awal.
+  3. Berikan penjelasan lebih detail dalam bentuk PARAGRAF yang nyaman dibaca, bisa poin jika perlu, dan jeda kalimat atau paragraf agar tidak terkesan berantakan.
+  4. Akhiri dengan tawaran bantuan atau ajakan untuk bertanya lagi.
 
-      PERTANYAAN: ${message}
-      
-      Aturan Jawaban:
-      - Jika ada di data, jawab dengan detail dan sopan.
-      - Jika tidak ada di data, katakan tidak tahu dan arahkan ke kontak WhatsApp.
-    `;
+  ATURAN KETAT:
+  1. Jawablah HANYA berdasarkan DATA REFERENSI yang diberikan.
+  2. Jika informasi tidak ada di DATA REFERENSI, katakan: "Maaf, informasi tersebut belum tersedia."
+  3. DILARANG KERAS berasumsi atau mengarang informasi berdasarkan nama lembaga (Contoh: Jangan berasumsi pendiri bernama Syahir hanya karena nama lembaganya Griya Sinau Syahir).
+  
+  DATA REFERENSI:
+  ${context}
+
+  PERTANYAAN PENGGUNA: 
+  ${message}
+
+  JAWABAN:
+`;
+
+    console.log("\n--- HASIL OUTPUT FASE AUGMENTATION ---");
+    console.log(prompt);
+    console.log("---------------------------------------\n");
+
+    // --- FASE 7: GENERATION ---
+    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
+
+    // Pastikan nama model benar. Jika 'gemini-3.1-pro' tidak tersedia,
+    // gunakan 'gemini-1.5-pro' yang merupakan versi paling stabil.
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent(prompt);
     const responseText = result.response.text();
 
+    console.log("--- HASIL FASE GENERATION: SUCCESS ---");
     return NextResponse.json({ answer: responseText });
-  } catch (error) {
-    console.error("API Error:", error);
+  } catch (error: any) {
+    // INI PENTING: Menampilkan eror asli dari Google di terminal
+    console.error("\n--- ❌ ERROR DI FASE GENERATION ❌ ---");
+    console.error("Pesan Eror:", error.message || error);
+    console.log("---------------------------------------\n");
+
     return NextResponse.json(
-      { answer: "Aduh, sepertinya ada gangguan teknis. Coba lagi ya!" },
+      { answer: "Maaf, sistem AI sedang mengalami gangguan koneksi." },
       { status: 500 },
     );
   }
 }
-
-// import { NextResponse } from "next/server";
-// import { getVectorStore } from "@/lib/rag";
-// import { GoogleGenerativeAI } from "@google/generative-ai";
-
-// export async function POST(req: Request) {
-//   const { message } = await req.json();
-//   const vectorStore = await getVectorStore();
-
-//   // Similarity Search [cite: 161, 208]
-//   // Menghitung kedekatan vektor menggunakan Cosine Similarity:
-//   // similarity = (A . B) / (||A|| ||B||)
-//   const searchResults = await vectorStore.similaritySearchWithScore(message, 3);
-
-//   // Decision Node: "Chunk Relevan Ditemukan?"
-//   const isFound = searchResults.length > 0 && searchResults[0][1] < 0.6;
-
-//   if (!isFound) {
-//     return NextResponse.json({
-//       answer: "Maaf, informasi tersebut tidak tersedia pada data Griya Sinau Syahir."
-//     });
-//   }
-
-//   // Susun Prompt & Kirim ke Gemini API [cite: 186]
-//   const context = searchResults.map(([doc]) => doc.pageContent).join("\n");
-//   const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
-//   const model = genAI.getGenerativeModel({ model: "gemini-3.1-pro" });
-//   const prompt = `Gunakan data ini untuk menjawab pertanyaan: \n${context}\n\nPertanyaan: ${message}`;
-//   const result = await model.generateContent(prompt);
-
-//   return NextResponse.json({ answer: result.response.text() });
-// }
