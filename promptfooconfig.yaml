@@ -1,0 +1,33 @@
+providers:
+  - id: google:gemini-2.0-flash-exp
+    config:
+      #apiKey: env.GOOGLE_API_KEY
+      #apiKey: ${process.env.GOOGLE_API_KEY}
+      apiKey: "${GOOGLE_API_KEY}"
+      apiVersion: v1
+      temperature: 0.2
+
+prompts:
+  - "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}}"
+
+tests:
+  - vars:
+      question: "Siapa pendiri bimbel ini?"
+      context: "Griya Sinau Syahir didirikan oleh Ibu Tati Mei Lina Setyowati, S.Pd."
+    assert:
+      - type: icontains
+        value: "Tati Mei Lina Setyowati"
+
+  - vars:
+      question: "Berapa biaya bulanan kelas umum?"
+      context: "Biaya bulanan kelas umum adalah Rp 100.000."
+    assert:
+      - type: icontains
+        value: "100.000"
+
+  - vars:
+      question: "Di mana lokasi bimbelnya?"
+      context: "Lokasi di Desa Sawangan, Kec. Jeruklegi, Cilacap."
+    assert:
+      - type: icontains
+        value: "Jeruklegi"
