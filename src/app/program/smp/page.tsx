@@ -1,63 +1,88 @@
-import React from 'react';
-import Layout from '@/components/Layout/Layout';
-import ProgramHero from '@/components/ProgramHero/ProgramHero';
-import ProgramBenefits, { BenefitType } from '@/components/ProgramBenefits/ProgramBenefits';
-import ClassDetailsSection, { DetailProps } from '@/components/ClassDetailsSection/ClassDetailsSection';
+import React, { ReactNode } from "react";
+import Layout from "@/components/Layout/Layout";
+import ProgramHero from "@/components/ProgramHero/ProgramHero";
+import ProgramBenefits, {
+  BenefitType,
+} from "@/components/ProgramBenefits/ProgramBenefits";
+import ClassDetailsSection, {
+  DetailProps,
+} from "@/components/ClassDetailsSection/ClassDetailsSection";
 import { BiMath } from "react-icons/bi";
-import { TbHorseToy } from "react-icons/tb";
-import { RiSpeakAiFill } from "react-icons/ri";
-import { MdDateRange, MdGroups } from "react-icons/md";
+import { MdGroups, MdSchool } from "react-icons/md";
 import { CiClock1 } from "react-icons/ci";
-import { FaChildReaching } from "react-icons/fa6";
 import { IoLocationOutline } from "react-icons/io5";
 import { PiCashRegister } from "react-icons/pi";
+import { GiMaterialsScience } from "react-icons/gi";
+import { FaBookReader } from "react-icons/fa";
 
-// --- DATA KHUSUS UNTUK HALAMAN PRASEKOLAH ---
+// --- DATA KHUSUS UNTUK HALAMAN SMP ---
 
-const praSekolahBenefits:BenefitType[] = [
-  {
-    icon: TbHorseToy,
-    title: "Belajar Sambil Bermain",
-    description: "Menggunakan metode permainan edukatif untuk menstimulasi motorik halus, sosialisasi, dan kreativitas anak sejak dini.",
-  },
+const smpBenefits: BenefitType[] = [
   {
     icon: BiMath,
-    title: "Persiapan Masuk SD",
-    description: "Pengenalan calistung (baca, tulis, hitung) dasar secara bertahap dan menyenangkan, membangun fondasi yang kuat.",
+    title: "Penguatan Logika Matematika",
+    description:
+      "Pendalaman materi Aljabar, Geometri, dan Statistika dengan metode penyelesaian masalah yang sistematis dan mudah dipahami.",
   },
   {
-    icon: RiSpeakAiFill,
-    title: "Membangun Kepercayaan Diri",
-    description: "Mendorong anak untuk berani berekspresi, bertanya, dan mandiri dalam lingkungan belajar yang aman dan mendukung.",
+    icon: GiMaterialsScience,
+    title: "Fokus IPA Terpadu",
+    description:
+      "Bimbingan intensif untuk mata pelajaran Fisika dan Biologi, membantu siswa memahami konsep alam secara mendalam.",
+  },
+  {
+    icon: FaBookReader,
+    title: "Persiapan Ujian & SMA Favorit",
+    description:
+      "Pendampingan khusus menghadapi PAS, PAT, ANBK, hingga persiapan seleksi masuk SMA/SMK unggulan.",
   },
 ];
 
-const praSekolahDetails: DetailProps[] = [
-  { icon: FaChildReaching, title: "Usia", description: "4 - 6 Tahun" },
-  { icon: CiClock1, title: "Durasi Kelas", description: "60 Menit / pertemuan" },
-  { icon: MdDateRange, title: "Durasi Program", description: "Paket 1 bulan, 3 bulan, 6 bulan" },
-  { icon: MdGroups, title: "Tipe", description: "Kelompok Kecil (Maks. 5 anak per kelas)" },
-  { icon: IoLocationOutline, title: "Lokasi", description: "Griya Sinau Syahir" },
-  { icon: PiCashRegister, title: "Pendaftaran", description: "Pendaftaran dibuka setiap awal semester." },
+const smpDetails: DetailProps[] = [
+  { icon: MdSchool, title: "Tingkat", description: "Kelas 7, 8, & 9 SMP" },
+  {
+    icon: CiClock1,
+    title: "Durasi Kelas",
+    description: "90 Menit / pertemuan",
+  },
+  {
+    icon: FaBookReader,
+    title: "Fasilitas",
+    description: "Modul Materi & Pembahasan Soal",
+  },
+  {
+    icon: MdGroups,
+    title: "Tipe",
+    description: "Kelompok Kecil (Maks. 10-15 anak per kelas)",
+  },
+  {
+    icon: IoLocationOutline,
+    title: "Lokasi",
+    description: "Griya Sinau Syahir",
+  },
+  {
+    icon: PiCashRegister,
+    title: "Pendaftaran",
+    description: "Dibuka untuk Semester Ganjil & Genap.",
+  },
 ];
 
-
-const PraSekolahPage = () => {
+const SmpPage = () => {
   return (
     <Layout>
       <ProgramHero
-        tag="PRASEKOLAH"
-        title="Pendidikan Pra Sekolah Terbaik untuk si Kecil"
-        description="Program prasekolah kami dirancang untuk menumbuhkan rasa ingin tahu, kreativitas, dan kecintaan belajar sejak dini."
-        imageSrc="/prasekolah.svg"
-        imageAlt="Anak-anak di prasekolah"
+        tag="SMP"
+        title="Bimbingan Belajar SMP: Siap Berprestasi dan Raih SMA Impian"
+        description="Program bimbingan belajar SMP di Griya Sinau Syahir dirancang untuk membantu siswa menguasai konsep akademik secara mendalam dan membangun kepercayaan diri menghadapi ujian."
+        imageSrc="/smp.svg" // Pastikan file gambar tersedia
+        imageAlt="Siswa SMP sedang belajar"
       />
-      
+
       {/* Kirim data sebagai props ke komponen */}
-      <ProgramBenefits benefits={praSekolahBenefits} />
-      <ClassDetailsSection details={praSekolahDetails} />
+      <ProgramBenefits benefits={smpBenefits} />
+      <ClassDetailsSection details={smpDetails} />
     </Layout>
   );
 };
 
-export default PraSekolahPage;
+export default SmpPage;

@@ -3,8 +3,6 @@ import { MemoryVectorStore } from "@langchain/classic/vectorstores/memory";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import fs from "fs/promises";
 import path from "path";
-import { NextResponse } from "next/server";
-import { GoogleGenerativeAI } from "@google/generative-ai";
 
 let vectorStoreInstance: MemoryVectorStore | null = null;
 
@@ -19,7 +17,7 @@ export async function getVectorStore() {
   console.log("\n--- START FASE: LOADING & CHUNKING ---");
 
   try {
-    const files = ["umum.json", "kelas.json"];
+    const files = ["bimbel-info.json", "kelas.json"];
     let combinedContent = "";
 
     for (const file of files) {
@@ -35,16 +33,31 @@ export async function getVectorStore() {
       chunkOverlap: 50,
     });
 
-    const docs = await splitter.createDocuments([combinedContent]);
+    let allDocs: any[] = []; // Array untuk menampung semua potongan dari tiap file
 
-    // --- LOG OUTPUT SEMUA CHUNKING (DATA NYATA) ---
+    for (const file of files) {
+      const filePath = path.join(knowledgePath, file);
+      const content = await fs.readFile(filePath, "utf-8");
+      
+      // KUNCI PERBAIKAN: Buat dokumen per file dengan menyisipkan metadata source
+      const docsFromFile = await splitter.createDocuments(
+        [content], 
+        [{ source: file }] // Memberikan metadata "source" berupa nama file
+      );
+      
+      allDocs.push(...docsFromFile);
+      console.log(`✅ File dibaca & diberi label metadata: ${file}`);
+    }
+
+    // --- LOG OUTPUT SEMUA CHUNKING ---
     console.log("\n===========================================");
-    console.log("   HASIL FASE CHUNKING (SEMUA POTONGAN)    ");
+    console.log("   HASIL FASE CHUNKING (DENGAN METADATA)   ");
     console.log("===========================================");
-    console.log(`Total Chunks: ${docs.length}`);
+    console.log(`Total Chunks: ${allDocs.length}`);
 
-    docs.forEach((doc, index) => {
+    allDocs.forEach((doc, index) => {
       console.log(`\n[CHUNK KE-${index + 1}]`);
+      console.log(`📄 Source: ${doc.metadata.source}`); // Sekarang source akan muncul
       console.log(doc.pageContent);
       console.log("-------------------------------------------");
     });
@@ -57,9 +70,46 @@ export async function getVectorStore() {
       modelName: "gemini-embedding-001",
     });
 
+    const sampleRes = await embeddings.embedDocuments([allDocs[0].pageContent]);
+    const vectorSample = sampleRes[0];
+
+    console.log("\n===========================================");
+    console.log("    HASIL FASE EMBEDDING (CONTOH VEKTOR)   ");
+    console.log("===========================================");
+    console.log(`[CHUNK KE-1] Berhasil diubah menjadi Vektor.`);
+    console.log(`Dimensi Vektor: ${vectorSample.length} angka`); // Biasanya 768
+    console.log(`10 Angka Pertama:`, vectorSample.slice(0, 10));
+    console.log("... (dan 758 angka lainnya) ...");
+    console.log("-------------------------------------------\n");
+
+    // ... proses fromDocuments selesai ...
     vectorStoreInstance = await MemoryVectorStore.fromDocuments(
-      docs,
+      allDocs,
       embeddings,
+    );
+
+    console.log("\n===========================================");
+    console.log("     VISUALISASI ISI VECTOR STORE          ");
+    console.log("===========================================");
+
+    // Kita intip 2 sampel data di dalam storage
+    const storageData = (vectorStoreInstance as any).memoryVectors;
+
+    storageData.slice(0, 2).forEach((item: any, index: number) => {
+      console.log(`\n[DATA STORAGE KE-${index + 1}]`);
+      console.log(
+        `📄 Teks Asli (Content): "${item.content.substring(0, 100)}..."`,
+      );
+      console.log(`🔢 ID Vektor: ${item.id}`);
+      console.log(
+        `📍 Koordinat Vektor (3 angka pertama): [${item.embedding.slice(0, 3)}...]`,
+      );
+      console.log(`🗂️ Metadata: ${JSON.stringify(item.metadata)}`);
+      console.log("-------------------------------------------");
+    });
+
+    console.log(
+      `\n✅ TOTAL DATA TERSIMPAN: ${storageData.length} PASANGAN TEKS-VEKTOR`,
     );
 
     console.log("🚀 SUCCESS: Vector Store siap digunakan!");

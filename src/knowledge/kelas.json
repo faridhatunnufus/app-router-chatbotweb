@@ -1,28 +1,28 @@
 {
-  "layanan_kelas": [
+  "program_kelas": [
     {
       "id": "umum_pra_sekolah",
-      "tipe_kelas": "Umum (Grup)",
-      "jenjang": "Pra-Sekolah (TK)",
-      "content": "Kelas Umum untuk jenjang Pra-Sekolah (usia 4-6 tahun) di Griya Sinau Syahir fokus pada Calistung (Baca, Tulis, Hitung). Biaya pendaftaran adalah Rp 100.000 per bulan dengan durasi 60 menit per pertemuan. Jadwal operasional tersedia Senin hingga Jumat pukul 10.00 sampai 20.30 dengan kapasitas kelas 10-15 siswa."
+      "tipe_kelas": "Umum",
+      "jenjang": "Pra-Sekolah (TK/PAUD)",
+      "content": "Kelas Umum untuk jenjang Pra-Sekolah (idealnya usia 4-6 tahun) di Griya Sinau Syahir fokus pada Calistung (Baca, Tulis, Hitung). Biaya pendaftaran adalah Rp 100.000 per bulan dengan durasi 60 menit per pertemuan. Jadwal operasional tersedia Senin hingga Jumat pukul 10.00 sampai 20.30 dengan kapasitas kelas 10-15 siswa."
     },
     {
       "id": "umum_sd",
-      "tipe_kelas": "Umum (Grup)",
+      "tipe_kelas": "Umum",
       "jenjang": "SD",
-      "content": "Kelas Umum jenjang SD (usia 7-13 tahun) di Griya Sinau Syahir mencakup mata pelajaran Agama, PPKN, IPA, IPS, Matematika, Bahasa Inggris, Bahasa Indonesia, dan Bahasa Jawa. Biaya bulanan sebesar Rp 100.000 untuk durasi program 1 bulan. Kelas dilaksanakan Senin-Jumat jam 10.00-20.30 dengan durasi 60 menit per sesi."
+      "content": "Kelas Umum jenjang SD (idealnya usia 7-13 tahun) di Griya Sinau Syahir mencakup semua mata pelajaran. Biaya bulanan sebesar Rp 100.000 untuk durasi program 1 bulan. Kelas dilaksanakan Senin-Jumat jam 10.00-20.30 dengan durasi 60 menit per sesi."
     },
     {
       "id": "umum_smp",
-      "tipe_kelas": "Umum (Grup)",
+      "tipe_kelas": "Umum",
       "jenjang": "SMP",
-      "content": "Program Kelas Umum SMP (usia 13-17 tahun) di Griya Sinau Syahir menawarkan bimbingan mata pelajaran Agama, PPKN, IPA, IPS, Matematika, Bahasa Inggris, Bahasa Indonesia, Fisika, Biologi, Bahasa Jawa, dan Informatika. Biaya pendidikan adalah Rp 100.000 per bulan, durasi 60 menit setiap pertemuan, diadakan Senin-Jumat pukul 10.00-20.30."
+      "content": "Program Kelas Umum SMP (idealnya usia 13-17 tahun) di Griya Sinau Syahir menawarkan bimbingan semua mata pelajaran. Biaya pendidikan adalah Rp 100.000 per bulan, durasi 60 menit setiap pertemuan, diadakan Senin-Jumat pukul 10.00-20.30."
     },
     {
       "id": "umum_sma",
-      "tipe_kelas": "Umum (Grup)",
+      "tipe_kelas": "Umum",
       "jenjang": "SMA",
-      "content": "Kelas Umum jenjang SMA (usia 17-19 tahun) menyediakan bimbingan lengkap untuk mata pelajaran IPA, IPS, Matematika, Fisika, Biologi, Kimia, Ekonomi, Sosiologi, Geografi, hingga Informatika. Berlokasi di Griya Sinau Syahir dengan biaya Rp 100.000 per bulan. Jadwal belajar Senin-Jumat jam 10.00-20.30 (durasi 60 menit)."
+      "content": "Kelas Umum jenjang SMA (idealnya usia 17-19 tahun) menyediakan bimbingan lengkap untukshampir mata pelajaran. Berlokasi di Griya Sinau Syahir dengan biaya Rp 100.000 per bulan. Jadwal belajar Senin-Jumat jam 10.00-20.30 (durasi 60 menit)."
     },
     {
       "id": "privat_gss",

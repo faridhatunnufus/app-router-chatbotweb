@@ -12,7 +12,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const testimonialsData: TestimonialCardProps[] = [
-  // (Data tetap sama seperti sebelumnya, pastikan Anda punya minimal 3 data atau lebih)
   {
     imageSrc: "/gambar4.jpg",
     name: "Putriani Nabila",
@@ -24,7 +23,7 @@ const testimonialsData: TestimonialCardProps[] = [
   {
     imageSrc: "/gambar5.jpg",
     name: "Nabila Amalia Wahyuni",
-    achievement: "Diterima di SMA Swasta Unggulan",
+    achievement: "Diterima di SMK N 1 Cilacap",
     quote:
       "Bimbel sangat membantu saya saat mempersiapkan  materi yang tidak dipahami saya bisa ditanyakan kepada pengajar.",
     variant: "green",
@@ -38,17 +37,17 @@ const testimonialsData: TestimonialCardProps[] = [
     variant: "orange",
   },
   {
-    imageSrc: "/gambar10.jpg", // Sebaiknya gunakan gambar & data unik
+    imageSrc: "/gambar10.jpg",
     name: "Rizky Pratama",
-    achievement: "Lulus dengan Nilai A",
+    achievement: "Lulus dengan Nilai Tertinggi",
     quote:
       "Awalnya ragu, tapi setelah beberapa sesi, saya merasa jauh lebih siap menghadapi ujian. Konsep yang rumit jadi terasa sederhana berkat cara penyampaian yang interaktif. Sangat membantu!",
     variant: "purple",
   },
   {
-    imageSrc: "/gambar8.jpg", // Sebaiknya gunakan gambar & data unik
+    imageSrc: "/gambar8.jpg", 
     name: "Siti Aisyah",
-    achievement: "Juara Olimpiade tingkat Kabupaten",
+    achievement: "Juara Olimpiade Sains tingkat Kabupaten",
     quote:
       "Lingkungan belajarnya kompetitif tapi tetap sehat. Try out rutin dan pembahasan soalnya sangat detail. Ini yang membuat saya bisa mengukur kemampuan dan terus berkembang.",
     variant: "green",

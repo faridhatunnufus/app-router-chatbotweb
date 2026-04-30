@@ -1,0 +1,462 @@
+{
+  "id": "eval-VuH-2026-04-30T10:27:29",
+  "createdAt": 1777544849206,
+  "author": null,
+  "config": {
+    "providers": [
+      {
+        "id": "google:gemini-2.5-flash",
+        "config": {
+          "apiKey": "AIzaSyC4nYpBZgZ_H5UtbXXZLZX_iE2QDhjBj_U",
+          "temperature": 0.2
+        }
+      }
+    ],
+    "prompts": [
+      {
+        "raw": "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}} api key: ${env.GOOGLE_API_KEY}",
+        "label": "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}} api key: ${env.GOOGLE_API_KEY}"
+      }
+    ],
+    "tests": [
+      {
+        "vars": {
+          "question": "Siapa pendiri bimbel ini?",
+          "context": "Griya Sinau Syahir didirikan oleh Ibu Tati Mei Lina Setyowati, S.Pd."
+        },
+        "assert": [
+          {
+            "type": "icontains",
+            "value": "Tati Mei Lina Setyowati"
+          }
+        ]
+      },
+      {
+        "vars": {
+          "question": "Berapa biaya bulanan kelas umum?",
+          "context": "Biaya bulanan kelas umum adalah Rp 100.000."
+        },
+        "assert": [
+          {
+            "type": "icontains",
+            "value": "100.000"
+          }
+        ]
+      },
+      {
+        "vars": {
+          "question": "Di mana lokasi bimbelnya?",
+          "context": "Lokasi di Desa Sawangan, Kec. Jeruklegi, Cilacap."
+        },
+        "assert": [
+          {
+            "type": "icontains",
+            "value": "Jeruklegi"
+          }
+        ]
+      }
+    ]
+  },
+  "results": [
+    {
+      "id": "f2a7717e-8607-4728-b7e8-519a69836832",
+      "evalId": "eval-VuH-2026-04-30T10:27:29",
+      "promptIdx": 0,
+      "testIdx": 0,
+      "testCase": {
+        "vars": {
+          "question": "Siapa pendiri bimbel ini?",
+          "context": "Griya Sinau Syahir didirikan oleh Ibu Tati Mei Lina Setyowati, S.Pd."
+        },
+        "assert": [
+          {
+            "type": "icontains",
+            "value": "Tati Mei Lina Setyowati"
+          }
+        ],
+        "options": {},
+        "metadata": {}
+      },
+      "prompt": {
+        "raw": "Anda adalah CS Griya Sinau Syahir. Gunakan data: Griya Sinau Syahir didirikan oleh Ibu Tati Mei Lina Setyowati, S.Pd. untuk menjawab: Siapa pendiri bimbel ini? api key: ${env.GOOGLE_API_KEY}",
+        "label": "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}} api key: ${env.GOOGLE_API_KEY}",
+        "config": {}
+      },
+      "promptId": "5392bf27421db2f08c80619899110ae2fa2d8eb9b36b5e9a4f99c7994f58b120",
+      "success": true,
+      "score": 1,
+      "response": {
+        "output": "Halo! Dengan senang hati saya bantu.\n\nPendiri Griya Sinau Syahir adalah **Ibu Tati Mei Lina Setyowati, S.Pd.**\n\nBeliau adalah sosok di balik visi dan misi Griya Sinau Syahir. Apakah ada pertanyaan lain yang ingin Anda tanyakan?",
+        "tokenUsage": {
+          "cached": 616,
+          "total": 616,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 494,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        },
+        "raw": {
+          "candidates": [
+            {
+              "content": {
+                "parts": [
+                  {
+                    "text": "Halo! Dengan senang hati saya bantu.\n\nPendiri Griya Sinau Syahir adalah **Ibu Tati Mei Lina Setyowati, S.Pd.**\n\nBeliau adalah sosok di balik visi dan misi Griya Sinau Syahir. Apakah ada pertanyaan lain yang ingin Anda tanyakan?"
+                  }
+                ],
+                "role": "model"
+              },
+              "finishReason": "STOP",
+              "index": 0
+            }
+          ],
+          "usageMetadata": {
+            "promptTokenCount": 61,
+            "candidatesTokenCount": 61,
+            "totalTokenCount": 616,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 61
+              }
+            ],
+            "thoughtsTokenCount": 494
+          },
+          "modelVersion": "gemini-2.5-flash",
+          "responseId": "VrzyaeHuE-XljuMP9Ke2oAU"
+        },
+        "cached": true,
+        "metadata": {}
+      },
+      "gradingResult": {
+        "pass": true,
+        "score": 1,
+        "reason": "All assertions passed",
+        "namedScores": {},
+        "tokensUsed": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0
+        },
+        "componentResults": [
+          {
+            "pass": true,
+            "score": 1,
+            "reason": "Assertion passed",
+            "assertion": {
+              "type": "icontains",
+              "value": "Tati Mei Lina Setyowati"
+            }
+          }
+        ]
+      },
+      "namedScores": {},
+      "provider": {
+        "id": "google:gemini-2.5-flash",
+        "label": "",
+        "config": {
+          "apiKey": "[REDACTED]",
+          "temperature": 0.2,
+          "vertexai": false
+        }
+      },
+      "latencyMs": 29,
+      "cost": 0,
+      "metadata": {
+        "_promptfooFileMetadata": {}
+      },
+      "failureReason": 0,
+      "persisted": false
+    },
+    {
+      "id": "43360e0c-bb68-4744-9ca0-1e2e1bab63d9",
+      "evalId": "eval-VuH-2026-04-30T10:27:29",
+      "promptIdx": 0,
+      "testIdx": 1,
+      "testCase": {
+        "vars": {
+          "question": "Berapa biaya bulanan kelas umum?",
+          "context": "Biaya bulanan kelas umum adalah Rp 100.000."
+        },
+        "assert": [
+          {
+            "type": "icontains",
+            "value": "100.000"
+          }
+        ],
+        "options": {},
+        "metadata": {}
+      },
+      "prompt": {
+        "raw": "Anda adalah CS Griya Sinau Syahir. Gunakan data: Biaya bulanan kelas umum adalah Rp 100.000. untuk menjawab: Berapa biaya bulanan kelas umum? api key: ${env.GOOGLE_API_KEY}",
+        "label": "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}} api key: ${env.GOOGLE_API_KEY}",
+        "config": {}
+      },
+      "promptId": "5392bf27421db2f08c80619899110ae2fa2d8eb9b36b5e9a4f99c7994f58b120",
+      "success": true,
+      "score": 1,
+      "response": {
+        "output": "Halo, selamat datang di Griya Sinau Syahir! Ada yang bisa saya bantu?\n\nMengenai pertanyaan Anda, biaya bulanan untuk kelas umum adalah **Rp 100.000**.\n\nApakah ada hal lain yang ingin Anda tanyakan?",
+        "tokenUsage": {
+          "cached": 214,
+          "total": 214,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 105,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        },
+        "raw": {
+          "candidates": [
+            {
+              "content": {
+                "parts": [
+                  {
+                    "text": "Halo, selamat datang di Griya Sinau Syahir! Ada yang bisa saya bantu?\n\nMengenai pertanyaan Anda, biaya bulanan untuk kelas umum adalah **Rp 100.000**.\n\nApakah ada hal lain yang ingin Anda tanyakan?"
+                  }
+                ],
+                "role": "model"
+              },
+              "finishReason": "STOP",
+              "index": 0
+            }
+          ],
+          "usageMetadata": {
+            "promptTokenCount": 55,
+            "candidatesTokenCount": 54,
+            "totalTokenCount": 214,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 55
+              }
+            ],
+            "thoughtsTokenCount": 105
+          },
+          "modelVersion": "gemini-2.5-flash",
+          "responseId": "VrzyaYjwIMbUqfkPvt7Z-Ac"
+        },
+        "cached": true,
+        "metadata": {}
+      },
+      "gradingResult": {
+        "pass": true,
+        "score": 1,
+        "reason": "All assertions passed",
+        "namedScores": {},
+        "tokensUsed": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0
+        },
+        "componentResults": [
+          {
+            "pass": true,
+            "score": 1,
+            "reason": "Assertion passed",
+            "assertion": {
+              "type": "icontains",
+              "value": "100.000"
+            }
+          }
+        ]
+      },
+      "namedScores": {},
+      "provider": {
+        "id": "google:gemini-2.5-flash",
+        "label": "",
+        "config": {
+          "apiKey": "[REDACTED]",
+          "temperature": 0.2,
+          "vertexai": false
+        }
+      },
+      "latencyMs": 28,
+      "cost": 0,
+      "metadata": {
+        "_promptfooFileMetadata": {}
+      },
+      "failureReason": 0,
+      "persisted": false
+    },
+    {
+      "id": "34be3b17-11b1-4600-a347-6f6260923ff1",
+      "evalId": "eval-VuH-2026-04-30T10:27:29",
+      "promptIdx": 0,
+      "testIdx": 2,
+      "testCase": {
+        "vars": {
+          "question": "Di mana lokasi bimbelnya?",
+          "context": "Lokasi di Desa Sawangan, Kec. Jeruklegi, Cilacap."
+        },
+        "assert": [
+          {
+            "type": "icontains",
+            "value": "Jeruklegi"
+          }
+        ],
+        "options": {},
+        "metadata": {}
+      },
+      "prompt": {
+        "raw": "Anda adalah CS Griya Sinau Syahir. Gunakan data: Lokasi di Desa Sawangan, Kec. Jeruklegi, Cilacap. untuk menjawab: Di mana lokasi bimbelnya? api key: ${env.GOOGLE_API_KEY}",
+        "label": "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}} api key: ${env.GOOGLE_API_KEY}",
+        "config": {}
+      },
+      "promptId": "5392bf27421db2f08c80619899110ae2fa2d8eb9b36b5e9a4f99c7994f58b120",
+      "success": true,
+      "score": 1,
+      "response": {
+        "output": "Halo! Tentu, dengan senang hati saya informasikan lokasi Griya Sinau Syahir.\n\nLokasi bimbel Griya Sinau Syahir berada di **Desa Sawangan, Kecamatan Jeruklegi, Kabupaten Cilacap.**\n\nJika Anda membutuhkan detail lebih lanjut atau ingin berkunjung, jangan ragu untuk menghubungi kami kembali! Terima kasih.",
+        "tokenUsage": {
+          "cached": 902,
+          "total": 902,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 777,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        },
+        "raw": {
+          "candidates": [
+            {
+              "content": {
+                "parts": [
+                  {
+                    "text": "Halo! Tentu, dengan senang hati saya informasikan lokasi Griya Sinau Syahir.\n\nLokasi bimbel Griya Sinau Syahir berada di **Desa Sawangan, Kecamatan Jeruklegi, Kabupaten Cilacap.**\n\nJika Anda membutuhkan detail lebih lanjut atau ingin berkunjung, jangan ragu untuk menghubungi kami kembali! Terima kasih."
+                  }
+                ],
+                "role": "model"
+              },
+              "finishReason": "STOP",
+              "index": 0
+            }
+          ],
+          "usageMetadata": {
+            "promptTokenCount": 54,
+            "candidatesTokenCount": 71,
+            "totalTokenCount": 902,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 54
+              }
+            ],
+            "thoughtsTokenCount": 777
+          },
+          "modelVersion": "gemini-2.5-flash",
+          "responseId": "VrzyacHDKuTJjuMPzrHBiQo"
+        },
+        "cached": true,
+        "metadata": {}
+      },
+      "gradingResult": {
+        "pass": true,
+        "score": 1,
+        "reason": "All assertions passed",
+        "namedScores": {},
+        "tokensUsed": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0
+        },
+        "componentResults": [
+          {
+            "pass": true,
+            "score": 1,
+            "reason": "Assertion passed",
+            "assertion": {
+              "type": "icontains",
+              "value": "Jeruklegi"
+            }
+          }
+        ]
+      },
+      "namedScores": {},
+      "provider": {
+        "id": "google:gemini-2.5-flash",
+        "label": "",
+        "config": {
+          "apiKey": "[REDACTED]",
+          "temperature": 0.2,
+          "vertexai": false
+        }
+      },
+      "latencyMs": 28,
+      "cost": 0,
+      "metadata": {
+        "_promptfooFileMetadata": {}
+      },
+      "failureReason": 0,
+      "persisted": false
+    }
+  ],
+  "prompts": [
+    {
+      "id": "5392bf27421db2f08c80619899110ae2fa2d8eb9b36b5e9a4f99c7994f58b120",
+      "raw": "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}} api key: ${env.GOOGLE_API_KEY}",
+      "label": "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}} api key: ${env.GOOGLE_API_KEY}",
+      "provider": "google:gemini-2.5-flash",
+      "metrics": {
+        "score": 3,
+        "testPassCount": 3,
+        "testFailCount": 0,
+        "testErrorCount": 0,
+        "assertPassCount": 3,
+        "assertFailCount": 0,
+        "totalLatencyMs": 85,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 1732,
+          "total": 1732,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 1376,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "namedScores": {},
+        "namedScoresCount": {},
+        "namedScoreWeights": {},
+        "cost": 0
+      }
+    }
+  ],
+  "persisted": false,
+  "vars": [
+    "question",
+    "context"
+  ],
+  "_resultsLoaded": false,
+  "_shared": false,
+  "durationMs": 59,
+  "evaluationDurationMs": 59
+}

@@ -7,11 +7,30 @@ export async function POST(req: Request) {
     const { message } = await req.json();
     const vectorStore = await getVectorStore();
 
-    // --- FASE 5: RETRIEVAL ---
-    const results = await vectorStore.similaritySearchWithScore(message, 2);
-    const context = results.map(([doc]) => doc.pageContent).join("\n");
+    // --- FASE 4: RETRIEVAL ---
+    console.log("\n===========================================");
+    console.log("      FASE 4: RETRIEVAL (SEARCHING...)     ");
+    console.log("===========================================");
+    console.log(`🔍 Pertanyaan User: "${message}"`);
 
-    // --- FASE 6: AUGMENTATION (Penggabungan) ---
+    // Mencari 2 dokumen paling mirip beserta skornya
+    const results = await vectorStore.similaritySearchWithScore(message, 2);
+
+    console.log(`\nFound ${results.length} relevant chunks:`);
+
+    results.forEach(([doc, score], index) => {
+      console.log(`\n[RANK ${index + 1}]`);
+      console.log(`📄 Content: "${doc.pageContent.substring(0, 150)}..."`);
+      console.log(`🎯 Similarity Score: ${score.toFixed(4)}`); 
+      // Catatan: Semakin mendekati 0 biasanya semakin mirip (tergantung algoritma jarak/distance)
+      console.log(`🗂️ Source: ${doc.metadata.source || "Unknown"}`);
+      console.log("-------------------------------------------");
+    });
+
+    const context = results.map(([doc]) => doc.pageContent).join("\n");
+    console.log("✅ Context Berhasil Disusun untuk AI.");
+
+    // --- FASE 5: AUGMENTATION (Penggabungan) ---
     // Di sini kita tampilkan output nyata yang dikirim ke AI
     const prompt = `
   Anda adalah Customer Service resmi Griya Sinau Syahir yang ramah, profesional, dan solutif.
@@ -44,7 +63,7 @@ export async function POST(req: Request) {
     console.log(prompt);
     console.log("---------------------------------------\n");
 
-    // --- FASE 7: GENERATION ---
+    // --- FASE 6: GENERATION ---
     const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
 
     // Pastikan nama model benar. Jika 'gemini-3.1-pro' tidak tersedia,
@@ -63,7 +82,7 @@ export async function POST(req: Request) {
     console.log("---------------------------------------\n");
 
     return NextResponse.json(
-      { answer: "Maaf, sistem AI sedang mengalami gangguan koneksi." },
+      { answer: "Maaf, bisa ulangi pertanyaan Anda? Atau ada hal lain yang perlu didiskusikan?" },
       { status: 500 },
     );
   }
