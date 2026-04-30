@@ -1,14 +1,12 @@
 providers:
-  - id: google:gemini-2.0-flash-exp
+  - id: google:gemini-2.5-flash
     config:
-      #apiKey: env.GOOGLE_API_KEY
-      #apiKey: ${process.env.GOOGLE_API_KEY}
-      apiKey: "${GOOGLE_API_KEY}"
+      apiKey: ${env.GOOGLE_API_KEY}
       apiVersion: v1
       temperature: 0.2
 
 prompts:
-  - "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}}"
+  - "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}} api key: ${env.GOOGLE_API_KEY}"
 
 tests:
   - vars:
