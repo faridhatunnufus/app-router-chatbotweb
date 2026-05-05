@@ -1,4 +1,3 @@
-/* Style dasar untuk Navbar, Logo, dan Navigasi Desktop */
 .navbarWrapper {
   width: 100%;
   background-color: #ffffff;
@@ -13,7 +12,6 @@
 
 .container {
   display: flex;
-  /* justify-content: space-between; <-- DIHAPUS */
   align-items: center;
   width: 100%;
   max-width: 1200px;
@@ -29,8 +27,8 @@
 }
 
 .logoText {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 800;
   color: #2c3e50;
 }
 
@@ -40,7 +38,7 @@
 
 .desktopNav {
   display: flex;
-  margin: 0 auto; /* <-- DITAMBAHKAN */
+  margin: 0 auto;
 }
 
 .navList {
@@ -58,7 +56,7 @@
 .navLink {
   color: #2c3e50;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -67,7 +65,7 @@
 }
 
 .navItem:hover .navLink {
-  color: #8e44ad;
+  color: #e91e63;
 }
 
 .dropdownArrow {
@@ -98,7 +96,9 @@
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, -10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   pointer-events: none;
 }
 
@@ -122,7 +122,9 @@
   text-decoration: none;
   font-weight: 500;
   border-radius: 8px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .dropdownLink:hover {
@@ -166,22 +168,22 @@
 
 .mobileMenu {
   position: fixed;
-  top: 0; /* Menu sekarang menutupi dari atas */
-  right: 0; /* Berada di sisi kanan */
-  left: auto; /* Hapus aturan posisi kiri */
-  width: 85%; /* Lebar menu 85% dari layar */
-  max-width: 400px; /* Tapi tidak akan lebih lebar dari 400px */
-  height: 100vh; /* Tinggi penuh layar */
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 85%;
+  max-width: 400px;
+  height: 100vh;
   background-color: #ffffff;
-  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1); /* Bayangan di sisi kiri */
-  padding: 80px 32px 40px 32px; /* Padding atas untuk memberi ruang navbar */
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+  padding: 80px 32px 40px 32px;
   transform: translateX(100%);
   transition: transform 0.4s ease-in-out;
   z-index: 1400;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Rata kiri */
-  justify-content: flex-start; /* Mulai dari atas */
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 32px;
 }
 
@@ -209,12 +211,12 @@
 
 .mobileCta {
   margin-top: 24px;
-  display: none; /* Tidak lagi digunakan */
+  display: none;
 }
 
 .activeLink {
-  font-weight: 700;
-  color: #8e44ad;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
 /* --- STYLE BARU UNTUK MOBILE DROPDOWN --- */
@@ -289,15 +291,14 @@
 }
 
 .mobileSubmenuLink:hover {
-  color: #8e44ad;
+  color: #e91e63;
 }
 
 /* --- AKHIR STYLE BARU --- */
 
-/* Cari blok media query ini di file Anda */
+/* Media Query */
 @media (max-width: 992px) {
   .container {
-    /* <-- TAMBAHKAN BLOK INI */
     justify-content: space-between;
   }
 

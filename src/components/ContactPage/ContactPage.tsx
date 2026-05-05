@@ -9,7 +9,7 @@ const contactDetails = [
   {
     icon: PiClockLight,
     title: "Jam Operasional",
-    text: "Senin - Jumat: 09:30 - 17.00 WIB",
+    text: "Senin - Jumat: 10.00 - 20.30 WIB",
     href: null,
   },
   {

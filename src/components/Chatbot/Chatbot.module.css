@@ -12,7 +12,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #1e40af; /* Biru Branding Griya Sinau */
+  background-color: #e91e63;
   color: white;
   border: none;
   font-size: 24px;
@@ -28,7 +28,7 @@
 
 .chatButton:hover {
   transform: scale(1.1);
-  background-color: #1d358e;
+  background-color: #e91e63;
 }
 
 /* Jendela Chat */
@@ -45,9 +45,8 @@
   border: 1px solid #e5e7eb;
 }
 
-/* Header Biru */
 .header {
-  background: #1e40af;
+  background: #e91e63;
   color: white;
   padding: 15px;
   display: flex;
@@ -63,7 +62,7 @@
 
 .avatar {
   background: white;
-  color: #1e40af;
+  color: #e91e63;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -99,6 +98,10 @@
   gap: 12px;
 }
 
+.messageArea .emptyState{
+  color: #000;
+}
+
 /* Baris Pesan (User di kanan, AI di kiri) */
 .userRow {
   align-self: flex-end;
@@ -125,7 +128,7 @@
 }
 
 .userRow .bubble {
-  background: #1e40af;
+  background: #e91e63;
   color: white;
   border-bottom-right-radius: 2px;
 }
@@ -164,7 +167,7 @@
 }
 
 .sendBtn {
-  background: #1e40af;
+  background: #e91e63;
   color: white;
   border: none;
   padding: 0 15px;
@@ -175,7 +178,7 @@
 }
 
 .sendBtn:hover:not(:disabled) {
-  background: #1d358e;
+  background: #e91e63;
 }
 
 .sendBtn:disabled {
@@ -204,5 +207,5 @@
 /* Biar tulisannya hitam pekat bahkan saat sedang diketik (focus) */
 .chatInput:focus {
   color: #000000;
-  border-color: #1e40af;
+  border-color: #e91e63;
 }
