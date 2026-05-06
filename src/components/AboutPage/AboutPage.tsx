@@ -18,7 +18,6 @@ const AboutPage = () => {
               src="/gambar1.jpg"
               alt="Sejarah Griya Sinau Syahir"
               layout="fill"
-              objectFit="cover"
             />
           </div>
         </div>
@@ -44,7 +43,6 @@ const AboutPage = () => {
               src="/gambar2.jpg"
               alt="Visi dan Misi Griya Sinau Syahir"
               layout="fill"
-              objectFit="cover"
             />
           </div>
         </div>
@@ -75,7 +73,6 @@ const AboutPage = () => {
               src="/gambar3.jpg"
               alt="Tujuan Griya Sinau Syahir"
               layout="fill"
-              objectFit="cover"
             />
           </div>
         </div>

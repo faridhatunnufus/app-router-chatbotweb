@@ -47,9 +47,9 @@ export async function POST(req: Request) {
 
   ATURAN KETAT:
   1. Jawablah HANYA berdasarkan DATA REFERENSI yang diberikan.
-  2. Jika informasi tidak ada di DATA REFERENSI, katakan: "Maaf, informasi tersebut belum tersedia."
-  3. DILARANG KERAS berasumsi atau mengarang informasi berdasarkan nama lembaga (Contoh: Jangan berasumsi pendiri bernama Syahir hanya karena nama lembaganya Griya Sinau Syahir).
-  
+  2. DILARANG KERAS berasumsi atau mengarang informasi berdasarkan nama lembaga.
+  3. Tidak boleh ada tanda bintang atau karakter lain yang membuat jawaban menjadi ambigu.
+
   DATA REFERENSI:
   ${context}
 
@@ -57,6 +57,7 @@ export async function POST(req: Request) {
   ${message}
 
   JAWABAN:
+  Ditampilkan di Chatbot
 `;
 
     console.log("\n--- HASIL OUTPUT FASE AUGMENTATION ---");

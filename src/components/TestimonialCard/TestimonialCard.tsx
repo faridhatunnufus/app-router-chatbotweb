@@ -1,9 +1,9 @@
 // src/components/TestimonialCard/TestimonialCard.tsx
 
-import React from 'react';
-import Image from 'next/image';
-import s from './TestimonialCard.module.css'; // Akan kita buat selanjutnya
-import classNames from 'classnames';
+import React from "react";
+import Image from "next/image";
+import s from "./TestimonialCard.module.css"; // Akan kita buat selanjutnya
+import classNames from "classnames";
 
 // Menentukan tipe data untuk props komponen
 export interface TestimonialCardProps {
@@ -11,7 +11,7 @@ export interface TestimonialCardProps {
   name: string;
   achievement: string;
   quote: string;
-  variant: 'orange' | 'purple' | 'green';
+  variant: "orange" | "purple" | "green";
 }
 
 const TestimonialCard = ({
@@ -36,7 +36,6 @@ const TestimonialCard = ({
           alt={`Foto testimoni dari ${name}`}
           width={250}
           height={250}
-          objectFit="cover"
           className={s.image}
         />
       </div>

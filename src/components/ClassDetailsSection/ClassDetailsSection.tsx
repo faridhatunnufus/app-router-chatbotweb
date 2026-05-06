@@ -21,7 +21,7 @@ const ClassDetailsSection = ({ details }: ClassDetailsProps) => {
     <section className={s.wrapper}>
       <div className={s.backgroundGraphics}>
         <div className={s.bgImage}>
-          {/*           <Image src="/gambar-detail-anak.png" alt="" layout="fill" objectFit="cover" /> */}
+          {/*           <Image src="/gambar-detail-anak.png" alt="" layout="fill"  /> */}
         </div>
         <div className={s.greenCircle}></div>
         <div className={s.orangeCircle}></div>
