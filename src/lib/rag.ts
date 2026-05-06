@@ -38,13 +38,13 @@ export async function getVectorStore() {
     for (const file of files) {
       const filePath = path.join(knowledgePath, file);
       const content = await fs.readFile(filePath, "utf-8");
-      
+
       // KUNCI PERBAIKAN: Buat dokumen per file dengan menyisipkan metadata source
       const docsFromFile = await splitter.createDocuments(
-        [content], 
-        [{ source: file }] // Memberikan metadata "source" berupa nama file
+        [content],
+        [{ source: file }], // Memberikan metadata "source" berupa nama file
       );
-      
+
       allDocs.push(...docsFromFile);
       console.log(`✅ File dibaca & diberi label metadata: ${file}`);
     }
@@ -74,12 +74,14 @@ export async function getVectorStore() {
     const vectorSample = sampleRes[0];
 
     console.log("\n===========================================");
-    console.log("    HASIL FASE EMBEDDING (CONTOH VEKTOR)   ");
+    console.log("    HASIL FASE EMBEDDING   ");
     console.log("===========================================");
     console.log(`[CHUNK KE-1] Berhasil diubah menjadi Vektor.`);
-    console.log(`Dimensi Vektor: ${vectorSample.length} angka`); // Biasanya 768
-    console.log(`10 Angka Pertama:`, vectorSample.slice(0, 10));
-    console.log("... (dan 758 angka lainnya) ...");
+    console.log(`Dimensi Vektor: ${vectorSample.length} angka`);
+    console.log(`100 Angka Pertama:`, vectorSample.slice(0, 100));
+    console.log("-------------------------------------------\n");
+    // Buat perhitungan sisa angka menjadi dinamis
+    console.log(`... (dan ${vectorSample.length - 100} angka lainnya) ...`);
     console.log("-------------------------------------------\n");
 
     // ... proses fromDocuments selesai ...
@@ -89,7 +91,7 @@ export async function getVectorStore() {
     );
 
     console.log("\n===========================================");
-    console.log("     VISUALISASI ISI VECTOR STORE          ");
+    console.log("          VECTOR STORE          ");
     console.log("===========================================");
 
     // Kita intip 2 sampel data di dalam storage
@@ -100,7 +102,6 @@ export async function getVectorStore() {
       console.log(
         `📄 Teks Asli (Content): "${item.content.substring(0, 100)}..."`,
       );
-      console.log(`🔢 ID Vektor: ${item.id}`);
       console.log(
         `📍 Koordinat Vektor (3 angka pertama): [${item.embedding.slice(0, 3)}...]`,
       );

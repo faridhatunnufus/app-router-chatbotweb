@@ -66,9 +66,6 @@ export async function POST(req: Request) {
 
     // --- FASE 6: GENERATION ---
     const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
-
-    // Pastikan nama model benar. Jika 'gemini-3.1-pro' tidak tersedia,
-    // gunakan 'gemini-1.5-pro' yang merupakan versi paling stabil.
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent(prompt);
