@@ -1,13 +1,13 @@
 {
-  "id": "eval-8y0-2026-04-30T01:33:04",
-  "createdAt": 1777512784182,
+  "id": "eval-5Uo-2026-05-08T06:14:09",
+  "createdAt": 1778220849466,
   "author": null,
   "config": {
     "providers": [
       {
         "id": "google:gemini-2.5-flash",
         "config": {
-          "apiKey": "AIzaSyC4nYpBZgZ_H5UtbXXZLZX_iE2QDhjBj_U",
+          "apiKey": "AIzaSyC_5a_26dDSciaGbItVGaXu4PnrD2hZJQU",
           "temperature": 0.2
         }
       }
@@ -21,13 +21,17 @@
     "tests": [
       {
         "vars": {
-          "question": "Siapa pendiri bimbel ini?",
-          "context": "Griya Sinau Syahir didirikan oleh Ibu Tati Mei Lina Setyowati, S.Pd."
+          "question": "bagaimana cara mendaftar di bimbel ini?",
+          "context": "Pendaftaran dilakukan melalui google formulir pada laman https://forms.gle/hkqKtD3m1jaTLrPe6, lalu konfirmasi pendaftaran dan pembayaran ke kontak whatsapp 085868147285"
         },
         "assert": [
           {
             "type": "icontains",
-            "value": "Tati Mei Lina Setyowati"
+            "value": "https://forms.gle/hkqKtD3m1jaTLrPe6"
+          },
+          {
+            "type": "icontains",
+            "value": "085868147285"
           }
         ]
       },
@@ -59,26 +63,30 @@
   },
   "results": [
     {
-      "id": "65f400da-b1dc-419d-9ecd-a6340ebb2cdb",
-      "evalId": "eval-8y0-2026-04-30T01:33:04",
+      "id": "023d1918-757e-4d37-a0ee-cfa58fba5fea",
+      "evalId": "eval-5Uo-2026-05-08T06:14:09",
       "promptIdx": 0,
       "testIdx": 0,
       "testCase": {
         "vars": {
-          "question": "Siapa pendiri bimbel ini?",
-          "context": "Griya Sinau Syahir didirikan oleh Ibu Tati Mei Lina Setyowati, S.Pd."
+          "question": "bagaimana cara mendaftar di bimbel ini?",
+          "context": "Pendaftaran dilakukan melalui google formulir pada laman https://forms.gle/hkqKtD3m1jaTLrPe6, lalu konfirmasi pendaftaran dan pembayaran ke kontak whatsapp 085868147285"
         },
         "assert": [
           {
             "type": "icontains",
-            "value": "Tati Mei Lina Setyowati"
+            "value": "https://forms.gle/hkqKtD3m1jaTLrPe6"
+          },
+          {
+            "type": "icontains",
+            "value": "085868147285"
           }
         ],
         "options": {},
         "metadata": {}
       },
       "prompt": {
-        "raw": "Anda adalah CS Griya Sinau Syahir. Gunakan data: Griya Sinau Syahir didirikan oleh Ibu Tati Mei Lina Setyowati, S.Pd. untuk menjawab: Siapa pendiri bimbel ini? api key: ${env.GOOGLE_API_KEY}",
+        "raw": "Anda adalah CS Griya Sinau Syahir. Gunakan data: Pendaftaran dilakukan melalui google formulir pada laman https://forms.gle/hkqKtD3m1jaTLrPe6, lalu konfirmasi pendaftaran dan pembayaran ke kontak whatsapp 085868147285 untuk menjawab: bagaimana cara mendaftar di bimbel ini? api key: ${env.GOOGLE_API_KEY}",
         "label": "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}} api key: ${env.GOOGLE_API_KEY}",
         "config": {}
       },
@@ -86,13 +94,13 @@
       "success": true,
       "score": 1,
       "response": {
-        "output": "Halo! Dengan senang hati saya bantu.\n\nPendiri Griya Sinau Syahir adalah **Ibu Tati Mei Lina Setyowati, S.Pd.**\n\nBeliau adalah sosok di balik visi dan misi Griya Sinau Syahir. Ada lagi yang bisa saya bantu?",
+        "output": "Halo Kak! Dengan senang hati saya akan bantu menjelaskan cara mendaftar di Griya Sinau Syahir.\n\nLangkah-langkahnya mudah kok:\n\n1.  **Isi Google Formulir Pendaftaran:**\n    Silakan akses dan isi formulir pendaftaran kami melalui tautan berikut:\n    **https://forms.gle/hkqKtD3m1jaTLrPe6**\n\n2.  **Konfirmasi Pendaftaran dan Pembayaran:**\n    Setelah mengisi formulir, mohon segera lakukan konfirmasi pendaftaran dan pembayaran Anda ke kontak WhatsApp kami di nomor:\n    **085868147285**\n\nItu dia Kak cara mendaftarnya. Jika ada pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami kembali ya! Kami tunggu pendaftarannya!",
         "tokenUsage": {
-          "cached": 662,
-          "total": 662,
+          "cached": 1114,
+          "total": 1114,
           "numRequests": 0,
           "completionDetails": {
-            "reasoning": 543,
+            "reasoning": 853,
             "acceptedPrediction": 0,
             "rejectedPrediction": 0
           }
@@ -103,7 +111,7 @@
               "content": {
                 "parts": [
                   {
-                    "text": "Halo! Dengan senang hati saya bantu.\n\nPendiri Griya Sinau Syahir adalah **Ibu Tati Mei Lina Setyowati, S.Pd.**\n\nBeliau adalah sosok di balik visi dan misi Griya Sinau Syahir. Ada lagi yang bisa saya bantu?"
+                    "text": "Halo Kak! Dengan senang hati saya akan bantu menjelaskan cara mendaftar di Griya Sinau Syahir.\n\nLangkah-langkahnya mudah kok:\n\n1.  **Isi Google Formulir Pendaftaran:**\n    Silakan akses dan isi formulir pendaftaran kami melalui tautan berikut:\n    **https://forms.gle/hkqKtD3m1jaTLrPe6**\n\n2.  **Konfirmasi Pendaftaran dan Pembayaran:**\n    Setelah mengisi formulir, mohon segera lakukan konfirmasi pendaftaran dan pembayaran Anda ke kontak WhatsApp kami di nomor:\n    **085868147285**\n\nItu dia Kak cara mendaftarnya. Jika ada pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami kembali ya! Kami tunggu pendaftarannya!"
                   }
                 ],
                 "role": "model"
@@ -113,19 +121,20 @@
             }
           ],
           "usageMetadata": {
-            "promptTokenCount": 61,
-            "candidatesTokenCount": 58,
-            "totalTokenCount": 662,
+            "promptTokenCount": 91,
+            "candidatesTokenCount": 170,
+            "totalTokenCount": 1114,
             "promptTokensDetails": [
               {
                 "modality": "TEXT",
-                "tokenCount": 61
+                "tokenCount": 91
               }
             ],
-            "thoughtsTokenCount": 543
+            "thoughtsTokenCount": 853,
+            "serviceTier": "standard"
           },
           "modelVersion": "gemini-2.5-flash",
-          "responseId": "7bDyacOsDOPajuMPsYfh0Qo"
+          "responseId": "LFr9adbEBYObjuMPk7m1qQk"
         },
         "cached": true,
         "metadata": {}
@@ -149,7 +158,16 @@
             "reason": "Assertion passed",
             "assertion": {
               "type": "icontains",
-              "value": "Tati Mei Lina Setyowati"
+              "value": "https://forms.gle/hkqKtD3m1jaTLrPe6"
+            }
+          },
+          {
+            "pass": true,
+            "score": 1,
+            "reason": "Assertion passed",
+            "assertion": {
+              "type": "icontains",
+              "value": "085868147285"
             }
           }
         ]
@@ -164,7 +182,7 @@
           "vertexai": false
         }
       },
-      "latencyMs": 29,
+      "latencyMs": 37,
       "cost": 0,
       "metadata": {
         "_promptfooFileMetadata": {}
@@ -173,8 +191,8 @@
       "persisted": false
     },
     {
-      "id": "5171cdcf-13ab-468f-81dd-a66b2386d920",
-      "evalId": "eval-8y0-2026-04-30T01:33:04",
+      "id": "04fa6039-aa75-4fad-ab8c-da0dada77536",
+      "evalId": "eval-5Uo-2026-05-08T06:14:09",
       "promptIdx": 0,
       "testIdx": 1,
       "testCase": {
@@ -200,10 +218,10 @@
       "success": true,
       "score": 1,
       "response": {
-        "output": "Halo, selamat datang di Griya Sinau Syahir!\n\nUntuk biaya bulanan kelas umum adalah **Rp 100.000**.\n\nApakah ada hal lain yang bisa saya bantu?",
+        "output": "Halo, selamat datang di Griya Sinau Syahir!\n\nUntuk biaya bulanan kelas umum adalah **Rp 100.000**.\n\nAda lagi yang bisa saya bantu?",
         "tokenUsage": {
-          "cached": 166,
-          "total": 166,
+          "cached": 164,
+          "total": 164,
           "numRequests": 0,
           "completionDetails": {
             "reasoning": 70,
@@ -217,7 +235,7 @@
               "content": {
                 "parts": [
                   {
-                    "text": "Halo, selamat datang di Griya Sinau Syahir!\n\nUntuk biaya bulanan kelas umum adalah **Rp 100.000**.\n\nApakah ada hal lain yang bisa saya bantu?"
+                    "text": "Halo, selamat datang di Griya Sinau Syahir!\n\nUntuk biaya bulanan kelas umum adalah **Rp 100.000**.\n\nAda lagi yang bisa saya bantu?"
                   }
                 ],
                 "role": "model"
@@ -228,18 +246,19 @@
           ],
           "usageMetadata": {
             "promptTokenCount": 55,
-            "candidatesTokenCount": 41,
-            "totalTokenCount": 166,
+            "candidatesTokenCount": 39,
+            "totalTokenCount": 164,
             "promptTokensDetails": [
               {
                 "modality": "TEXT",
                 "tokenCount": 55
               }
             ],
-            "thoughtsTokenCount": 70
+            "thoughtsTokenCount": 70,
+            "serviceTier": "standard"
           },
           "modelVersion": "gemini-2.5-flash",
-          "responseId": "7bDyabWuAuL5juMPxo6wiQg"
+          "responseId": "PSr8aZneBd3U4-EPkKHxCQ"
         },
         "cached": true,
         "metadata": {}
@@ -278,7 +297,7 @@
           "vertexai": false
         }
       },
-      "latencyMs": 29,
+      "latencyMs": 37,
       "cost": 0,
       "metadata": {
         "_promptfooFileMetadata": {}
@@ -287,8 +306,8 @@
       "persisted": false
     },
     {
-      "id": "26612ced-696b-439e-a740-b7fa6dd7a1a4",
-      "evalId": "eval-8y0-2026-04-30T01:33:04",
+      "id": "a1947714-27ae-46b3-a6b2-2e016d71e67d",
+      "evalId": "eval-5Uo-2026-05-08T06:14:09",
       "promptIdx": 0,
       "testIdx": 2,
       "testCase": {
@@ -314,13 +333,13 @@
       "success": true,
       "score": 1,
       "response": {
-        "output": "Halo! Dengan senang hati saya bantu.\n\nLokasi pusat bimbingan belajar Griya Sinau Syahir kami berada di **Desa Sawangan, Kecamatan Jeruklegi, Cilacap.**\n\nSemoga informasinya membantu ya! Jika ada pertanyaan lebih lanjut atau ingin tahu detail lainnya, jangan ragu untuk bertanya.\n\nTerima kasih!",
+        "output": "Halo! Dengan senang hati saya bantu. 😊\n\nLokasi Griya Sinau Syahir kami berada di:\n**Desa Sawangan, Kecamatan Jeruklegi, Cilacap.**\n\nApakah ada pertanyaan lain yang bisa kami bantu?",
         "tokenUsage": {
-          "cached": 843,
-          "total": 843,
+          "cached": 734,
+          "total": 734,
           "numRequests": 0,
           "completionDetails": {
-            "reasoning": 719,
+            "reasoning": 632,
             "acceptedPrediction": 0,
             "rejectedPrediction": 0
           }
@@ -331,7 +350,7 @@
               "content": {
                 "parts": [
                   {
-                    "text": "Halo! Dengan senang hati saya bantu.\n\nLokasi pusat bimbingan belajar Griya Sinau Syahir kami berada di **Desa Sawangan, Kecamatan Jeruklegi, Cilacap.**\n\nSemoga informasinya membantu ya! Jika ada pertanyaan lebih lanjut atau ingin tahu detail lainnya, jangan ragu untuk bertanya.\n\nTerima kasih!"
+                    "text": "Halo! Dengan senang hati saya bantu. 😊\n\nLokasi Griya Sinau Syahir kami berada di:\n**Desa Sawangan, Kecamatan Jeruklegi, Cilacap.**\n\nApakah ada pertanyaan lain yang bisa kami bantu?"
                   }
                 ],
                 "role": "model"
@@ -342,18 +361,19 @@
           ],
           "usageMetadata": {
             "promptTokenCount": 54,
-            "candidatesTokenCount": 70,
-            "totalTokenCount": 843,
+            "candidatesTokenCount": 48,
+            "totalTokenCount": 734,
             "promptTokensDetails": [
               {
                 "modality": "TEXT",
                 "tokenCount": 54
               }
             ],
-            "thoughtsTokenCount": 719
+            "thoughtsTokenCount": 632,
+            "serviceTier": "standard"
           },
           "modelVersion": "gemini-2.5-flash",
-          "responseId": "7LDyabjQNZzJjuMP1r-BoAU"
+          "responseId": "PCr8aav5IfmdjuMPyoWoCA"
         },
         "cached": true,
         "metadata": {}
@@ -392,7 +412,7 @@
           "vertexai": false
         }
       },
-      "latencyMs": 29,
+      "latencyMs": 37,
       "cost": 0,
       "metadata": {
         "_promptfooFileMetadata": {}
@@ -412,17 +432,17 @@
         "testPassCount": 3,
         "testFailCount": 0,
         "testErrorCount": 0,
-        "assertPassCount": 3,
+        "assertPassCount": 4,
         "assertFailCount": 0,
-        "totalLatencyMs": 87,
+        "totalLatencyMs": 111,
         "tokenUsage": {
           "prompt": 0,
           "completion": 0,
-          "cached": 1671,
-          "total": 1671,
+          "cached": 2012,
+          "total": 2012,
           "numRequests": 0,
           "completionDetails": {
-            "reasoning": 1332,
+            "reasoning": 1555,
             "acceptedPrediction": 0,
             "rejectedPrediction": 0,
             "cacheReadInputTokens": 0,
@@ -457,6 +477,6 @@
   ],
   "_resultsLoaded": false,
   "_shared": false,
-  "durationMs": 58,
-  "evaluationDurationMs": 58
+  "durationMs": 88,
+  "evaluationDurationMs": 88
 }
