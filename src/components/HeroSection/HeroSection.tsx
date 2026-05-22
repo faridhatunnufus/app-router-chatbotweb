@@ -1,25 +1,36 @@
 import React from "react";
 import s from "./HeroSection.module.css";
 import Image from "next/image";
+import { Poppins } from "next/font/google";
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "800", "900"], // Sesuaikan ketebalan yang dibutuhkan
+  display: "swap",
+});
 const HeroSection = () => {
   return (
-    <section className={s.wrapper}>
+    <section className={`${s.wrapper} ${poppins.className}`}>
       <div className={s.container}>
         {/* Kolom Kiri: Teks */}
         <div className={s.textContainer}>
           <h1 className={s.heading}>
-            <span className={s.mainHeading}>Enjoy Your Learning With Us!</span>
-            <span className={s.subHeading}>
-              Belajar Lebih Mudah
-              <br></br>Hasil Lebih Nyata
+            <span className={s.mainHeading}>
+              Enjoy Your Learning With <span className={s.textPurple}>Us!</span>
             </span>
           </h1>
-          <p className={s.description}>
+          <h3 className={s.subHeading}>
+            <span>
+              Belajar <span className={s.textOrange}>Lebih</span> Mudah
+              <br />
+              <span className={s.textPurple}>Hasil</span> Lebih Nyata
+            </span>
+          </h3>
+          {/*           <p className={s.description}>
             Bimbel Griya Sinau Syahir berkomitmen untuk menjadi bagian dalam
             mencerdaskan anak bangsa, bergerak dengan hati, dan pulihkan
             pendidikan
-          </p>
+          </p> */}
         </div>
 
         {/* Kolom Kanan: Gambar */}
