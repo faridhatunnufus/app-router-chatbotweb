@@ -1,11 +1,30 @@
 import { NextResponse } from "next/server";
 import { getVectorStore } from "@/lib/rag";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAIEmbeddings } from "@langchain/google-genai";
 
 export async function POST(req: Request) {
   try {
     const { message } = await req.json();
     const vectorStore = await getVectorStore();
+
+    console.log("\n===========================================");
+    console.log("   FASE 4A: EMBEDDING PERTANYAAN USER      ");
+    console.log("===========================================");
+    console.log(`💬 Mengubah pertanyaan menjadi vektor: "${message}"`);
+
+    // 1. Panggil model embedding yang sama dengan yang digunakan pada file JSON
+    const queryEmbeddings = new GoogleGenerativeAIEmbeddings({
+      modelName: "gemini-embedding-001",
+    });
+
+    // 2. Lakukan embedding terhadap teks pertanyaan user secara manual
+    const queryVector = await queryEmbeddings.embedQuery(message);
+
+    console.log(`✅ Pertanyaan berhasil diubah menjadi Vektor.`);
+    console.log(`Dimensi Vektor Pertanyaan: ${queryVector.length} angka`);
+    console.log(`5 Angka Pertama Vektor:`, queryVector.slice(0, 5));
+    console.log("-------------------------------------------\n");
 
     // --- FASE 4: RETRIEVAL ---
     console.log("\n===========================================");
@@ -21,7 +40,7 @@ export async function POST(req: Request) {
     results.forEach(([doc, score], index) => {
       console.log(`\n[RANK ${index + 1}]`);
       console.log(`📄 Content: "${doc.pageContent.substring(0, 150)}..."`);
-      console.log(`🎯 Similarity Score: ${score.toFixed(4)}`); 
+      console.log(`🎯 Similarity Score: ${score.toFixed(4)}`);
       // Catatan: Semakin mendekati 0 biasanya semakin mirip (tergantung algoritma jarak/distance)
       console.log(`🗂️ Source: ${doc.metadata.source || "Unknown"}`);
       console.log("-------------------------------------------");
@@ -80,7 +99,10 @@ export async function POST(req: Request) {
     console.log("---------------------------------------\n");
 
     return NextResponse.json(
-      { answer: "Maaf, bisa ulangi pertanyaan Anda? Atau ada hal lain yang perlu didiskusikan?" },
+      {
+        answer:
+          "Maaf, bisa ulangi pertanyaan Anda? Atau ada hal lain yang perlu didiskusikan?",
+      },
       { status: 500 },
     );
   }
