@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const vectorStore = await getVectorStore();
 
     console.log("\n===========================================");
-    console.log("   FASE 4A: EMBEDDING PERTANYAAN USER      ");
+    console.log("   FASE EMBEDDING PERTANYAAN USER      ");
     console.log("===========================================");
     console.log(`💬 Mengubah pertanyaan menjadi vektor: "${message}"`);
 
@@ -23,7 +23,9 @@ export async function POST(req: Request) {
 
     console.log(`✅ Pertanyaan berhasil diubah menjadi Vektor.`);
     console.log(`Dimensi Vektor Pertanyaan: ${queryVector.length} angka`);
-    console.log(`5 Angka Pertama Vektor:`, queryVector.slice(0, 5));
+    console.log(`100 Angka Pertama Vektor:`, queryVector.slice(0, 100));
+    console.log("-------------------------------------------\n");
+    console.log(`... (dan ${queryVector.length - 100} angka lainnya) ...`);
     console.log("-------------------------------------------\n");
 
     // --- FASE 4: RETRIEVAL ---
