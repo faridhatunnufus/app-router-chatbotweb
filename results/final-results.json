@@ -4,20 +4,20 @@
     "context": "Pendiri: Tati Mei Lina Setyowati, S.Pd.",
     "response": "Halo! Dengan senang hati saya bantu.\n\nPendiri dari Bimbingan Belajar Griya Sinau Syahir adalah **Ibu Tati Mei Lina Setyowati, S.Pd.**\n\nAda lagi yang bisa saya bantu?",
     "success": true,
-    "latencyMs": 36
+    "latencyMs": 61
   },
   {
     "question": "Kapan lembaga bimbingan belajar ini resmi didirikan?",
     "context": "Tanggal Berdiri: 01 Februari 2022",
     "response": "Halo! Terima kasih atas pertanyaannya.\n\nGriya Sinau Syahir resmi didirikan pada **01 Februari 2022**.\n\nSemoga informasi ini membantu! Jika ada pertanyaan lain, jangan ragu untuk menghubungi kami.",
     "success": true,
-    "latencyMs": 36
+    "latencyMs": 61
   },
   {
     "question": "Di mana alamat kantor pusat dari Griya Sinau Syahir?",
     "context": "Alamat Pusat: Dusun Manggisan, Desa Sawangan, Kecamatan Jeruklegi, Kabupaten Cilacap, Jawa Tengah.",
     "response": "Halo! Terima kasih atas pertanyaan Anda.\n\nAlamat kantor pusat Griya Sinau Syahir adalah di:\n**Dusun Manggisan, Desa Sawangan, Kecamatan Jeruklegi, Kabupaten Cilacap, Jawa Tengah.**\n\nSemoga informasi ini membantu! Ada lagi yang bisa kami bantu?\n\nHormat kami,\nCS Griya Sinau Syahir",
     "success": true,
-    "latencyMs": 36
+    "latencyMs": 61
   }
 ]

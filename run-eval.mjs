@@ -4,6 +4,8 @@ import path from "path";
 import testDataset from "./src/knowledge/evaluasi/dataset-uji.json" with { type: "json" };
 
 async function main() {
+  //TAHAP INISIALISASI DATA
+
   console.log("🚀 Starting Evaluation in Batch Sessions...");
 
   const fullTextContent = fs.readFileSync(
@@ -29,6 +31,8 @@ async function main() {
     fs.unlinkSync(tempFilePath);
   }
 
+  // TAHAP BATCHING DAN RETRIEVAL
+
   const batchSize = 5;
   const totalQuestions = testDataset.length;
   let accumulatedResults = [];
@@ -49,6 +53,12 @@ async function main() {
         ? matchedLine.trim()
         : `Related information: ${item.expect}`;
 
+      // Tambahkan di sini
+      console.log(`🔍 Pertanyaan : ${item.q}`);
+      console.log(`🎯 Kata Kunci : ${item.expect}`);
+      console.log(`📄 Konteks   : ${targetContext}`);
+      console.log(`--------------------------------------------------`);
+
       return {
         vars: {
           question: item.q,
@@ -62,6 +72,8 @@ async function main() {
         ],
       };
     });
+
+    //TAHAP EKSEKUSI
 
     const batchResults = await promptfoo.evaluate({
       writeLatestResults: true,
@@ -88,6 +100,8 @@ async function main() {
     ) {
       await batchResults.loadResults();
     }
+
+    //TAHAP EVALUASI
 
     const rawResults =
       batchResults.results?.length > 0
@@ -138,6 +152,8 @@ async function main() {
                 : 0,
             };
           });
+
+    //TAHAP PENYIMPANAN DAN EVALUASI
 
     accumulatedResults = [...accumulatedResults, ...sessionDetails];
 
