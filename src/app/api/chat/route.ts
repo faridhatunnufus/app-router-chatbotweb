@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const vectorStore = await getVectorStore();
 
     console.log("\n===========================================");
-    console.log("   FASE EMBEDDING PERTANYAAN USER      ");
+    console.log("   FASE EMBEDDING PERTANYAAN Visitor      ");
     console.log("===========================================");
     console.log(`💬 Mengubah pertanyaan menjadi vektor: "${message}"`);
 
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       modelName: "gemini-embedding-001",
     });
 
-    // 2. Lakukan embedding terhadap teks pertanyaan user secara manual
+    // 2. Lakukan embedding terhadap teks pertanyaan visitor
     const queryVector = await queryEmbeddings.embedQuery(message);
 
     console.log(`✅ Pertanyaan berhasil diubah menjadi Vektor.`);
@@ -47,12 +47,10 @@ export async function POST(req: Request) {
       console.log(`🗂️ Source: ${doc.metadata.source || "Unknown"}`);
       console.log("-------------------------------------------");
     });
-
     const context = results.map(([doc]) => doc.pageContent).join("\n");
     console.log("✅ Context Berhasil Disusun untuk AI.");
 
     // --- FASE 5: AUGMENTATION (Penggabungan) ---
-    // Di sini kita tampilkan output nyata yang dikirim ke AI
     const prompt = `
   Anda adalah Customer Service resmi Griya Sinau Syahir yang ramah, profesional, dan solutif.
   
@@ -63,7 +61,8 @@ export async function POST(req: Request) {
   FORMAT JAWABAN:
   1. Mulailah dengan sapaan hangat.
   2. Berikan jawaban singkat dan padat di kalimat awal.
-  3. Berikan penjelasan lebih detail dalam bentuk PARAGRAF yang nyaman dibaca, bisa poin jika perlu, dan jeda kalimat atau paragraf agar tidak terkesan berantakan.
+  3. Berikan penjelasan lebih detail dalam bentuk PARAGRAF yang nyaman dibaca, bisa poin jika perlu, 
+  dan jeda kalimat atau paragraf agar tidak terkesan berantakan.
   4. Akhiri dengan tawaran bantuan atau ajakan untuk bertanya lagi.
 
   ATURAN KETAT:

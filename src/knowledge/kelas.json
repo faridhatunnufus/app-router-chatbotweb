@@ -4,37 +4,85 @@
       "id": "umum_pra_sekolah",
       "tipe_kelas": "Umum",
       "jenjang": "Pra-Sekolah (TK/PAUD)",
-      "content": "Kelas Umum untuk jenjang Pra-Sekolah (idealnya usia 4-6 tahun) di Griya Sinau Syahir fokus pada Calistung (Baca, Tulis, Hitung). Biaya pendaftaran adalah Rp 100.000 per bulan dengan durasi 60 menit per pertemuan. Jadwal operasional tersedia Senin hingga Jumat pukul 10.00 sampai 20.30 dengan kapasitas kelas 10-15 siswa."
+      "fokus_materi": "Calistung (Baca, Tulis, Hitung)",
+      "estimasi_usia": "4-6 tahun",
+      "biaya_bulanan": 100000,
+      "durasi_per_sesi_menit": 60,
+      "kapasitas_maksimal_siswa": "15 siswa",
+      "hari_operasional": "Senin - Jumat",
+      "jadwal_sesi": "Siang hingga sore pukul 13.00 - 16.00"
     },
     {
       "id": "umum_sd",
       "tipe_kelas": "Umum",
       "jenjang": "SD",
-      "content": "Kelas Umum jenjang SD (idealnya usia 7-13 tahun) di Griya Sinau Syahir mencakup semua mata pelajaran. Biaya bulanan sebesar Rp 100.000 untuk durasi program 1 bulan. Kelas dilaksanakan Senin-Jumat jam 10.00-20.30 dengan durasi 60 menit per sesi."
+      "fokus_materi": "Semua mata pelajaran",
+      "estimasi_usia": "7-13 tahun",
+      "biaya_bulanan": 100000,
+      "durasi_per_sesi_menit": 60,
+      "kapasitas_maksimal_siswa": "20 siswa",
+      "hari_operasional": "Senin - Jumat",
+      "jadwal_sesi": "Siang hingga sore pukul 13.00 - 16.00"
     },
     {
       "id": "umum_smp",
       "tipe_kelas": "Umum",
       "jenjang": "SMP",
-      "content": "Program Kelas Umum SMP (idealnya usia 13-17 tahun) di Griya Sinau Syahir menawarkan bimbingan semua mata pelajaran. Biaya pendidikan adalah Rp 100.000 per bulan, durasi 60 menit setiap pertemuan, diadakan Senin-Jumat pukul 10.00-20.30."
+      "fokus_materi": "Semua mata pelajaran",
+      "estimasi_usia": "13-17 tahun",
+      "biaya_bulanan": 100000,
+      "durasi_per_sesi_menit": 60,
+      "kapasitas_maksimal_siswa": "20 siswa",
+      "hari_operasional": "Senin - Jumat",
+      "jadwal_sesi": "Sore hingga malam pukul 16.00 - 19.30"
     },
     {
       "id": "umum_sma",
       "tipe_kelas": "Umum",
       "jenjang": "SMA",
-      "content": "Kelas Umum jenjang SMA (idealnya usia 17-19 tahun) menyediakan bimbingan lengkap untukshampir mata pelajaran. Berlokasi di Griya Sinau Syahir dengan biaya Rp 100.000 per bulan. Jadwal belajar Senin-Jumat jam 10.00-20.30 (durasi 60 menit)."
+      "fokus_materi": "Semua mata pelajaran",
+      "estimasi_usia": "17-19 tahun",
+      "biaya_bulanan": 100000,
+      "durasi_per_sesi_menit": 60,
+      "kapasitas_maksimal_siswa": "20 siswa",
+      "hari_operasional": "Senin - Jumat",
+      "jadwal_sesi": "Sore hingga malam pukul 16.00 - 19.30"
     },
     {
       "id": "privat_gss",
-      "tipe_kelas": "Privat (Di Lokasi)",
+      "tipe_kelas": "Privat Di Lokasi Bimbel Griya Sinau Syahir",
       "jenjang": "Pra-Sekolah sampai SMA",
-      "content": "Kelas Privat di lokasi Griya Sinau Syahir (GSS) tersedia untuk semua jenjang dari Pra-sekolah hingga SMA. Biaya bulanan adalah Rp 120.000 dengan kapasitas terbatas 1-2 anak per sesi. Durasi belajar 60 menit, jadwal tersedia Senin-Jumat pukul 14.00-20.30. Mencakup semua mata pelajaran sesuai jenjang sekolah."
+      "fokus_materi": "Semua mata pelajaran sesuai jenjang sekolah",
+      "biaya_bulanan": 120000,
+      "durasi_per_sesi_jam": "1.5 - 2 jam",
+      "kapasitas_maksimal_siswa": "5 siswa",
+      "hari_operasional": "Senin - Jumat (Sabtu opsional berdasarkan kesepakatan)",
+      "jadwal_sesi": "Lebih fleksibel / Menyesuaikan kesepakatan tutor dan orang tua"
     },
     {
       "id": "privat_rumah",
       "tipe_kelas": "Privat (Guru ke Rumah)",
       "jenjang": "Pra-Sekolah sampai SMA",
-      "content": "Layanan Kelas Privat Guru Datang ke Rumah Siswa tersedia untuk jenjang Pra-sekolah hingga SMA dengan biaya berkisar antara Rp 200.000 sampai Rp 250.000 per bulan. Durasi per pertemuan adalah 60 menit dengan kapasitas 1-2 anak. Jadwal sangat fleksibel karena menyesuaikan dengan waktu luang siswa."
+      "fokus_materi": "Semua mata pelajaran sesuai jenjang sekolah",
+      "biaya_bulanan_range": "200 ribu",
+      "durasi_per_sesi_jam": "1.5 - 2 jam",
+      "kapasitas_maksimal_siswa": "1 siswa",
+      "hari_operasional": "Sangat fleksibel (Senin - Sabtu)",
+      "jadwal_sesi": "Menyesuaikan sepenuhnya dengan waktu luang siswa & kesepakatan orang tua dengan tutor"
     }
-  ]
+  ],
+  "kebijakan_khusus_sabtu_dan_tambahan_jam": {
+    "ketersediaan_hari_sabtu": [
+      "Layanan hari Sabtu dibuka khusus untuk program privat baik di lokasi bimbel maupun guru ke rumah dengan durasi tetap 1,5 hingga 2 jam", 
+      "menyesuaikan kesepakatan bersama antara tutor dan orang tua."
+    ],
+    "biaya_tambahan_aturan": {
+      "nominal": 30000,
+      "satuan": "per jam",
+      "peruntukan": [
+        "Siswa kelas umum yang ingin mengikuti pembelajaran privat di luar tarif normal bulanan",
+        "Siswa kelas privat yang ingin menambah jam belajar di luar kuota/durasi standar"
+      ]
+    }
+  }
 }

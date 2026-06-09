@@ -34,7 +34,7 @@ const smaDetails = [
     { icon: GoStack, title: "Jenjang", description: "16 - 18 Tahun (Kelas 10-12 SMA)" },
     { icon: CiClock1, title: "Durasi Sesi", description: "60 Menit / pertemuan" },
     { icon: MdDateRange, title: "Durasi Program", description: "Satu bulan" },
-    { icon: MdGroup, title: "Tipe Kelas", description: "Kelas Ujian Intensif dan Privat" },
+    { icon: MdGroup, title: "Tipe dan Kapasitas Kelas", description: "Kelas Reguler & Privat. Kapasitas 15-20 anak" },
     { icon: MdOutlineLibraryBooks, title: "Mata Pelajaran", description: "TPS, Literasi, Matematika, Saintek" },
     { icon: PiCashRegister, title: "Pendaftaran", description: "Pendaftaran paket intensif UTBK telah dibuka." },
 ];

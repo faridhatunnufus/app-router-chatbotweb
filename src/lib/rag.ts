@@ -46,12 +46,12 @@ export async function getVectorStore() {
       );
 
       allDocs.push(...docsFromFile);
-      console.log(`✅ File dibaca & diberi label metadata: ${file}`);
+      console.log(`✅ File dibaca: ${file}`);
     }
 
     // --- LOG OUTPUT SEMUA CHUNKING ---
     console.log("\n===========================================");
-    console.log("   HASIL FASE CHUNKING (DENGAN METADATA)   ");
+    console.log("   HASIL FASE CHUNKING   ");
     console.log("===========================================");
     console.log(`Total Chunks: ${allDocs.length}`);
 
@@ -97,13 +97,14 @@ export async function getVectorStore() {
     // Kita intip 2 sampel data di dalam storage
     const storageData = (vectorStoreInstance as any).memoryVectors;
 
-    storageData.slice(0, 2).forEach((item: any, index: number) => {
-      console.log(`\n[DATA STORAGE KE-${index + 1}]`);
+    storageData.forEach((item: any, index: number) => {
       console.log(
-        `📄 Teks Asli (Content): "${item.content.substring(0, 100)}..."`,
+        `\n[DATA STORAGE KE-${index + 1} DARI ${storageData.length}]`,
       );
+      console.log(`📄 Teks Asli (Content): "${item.content}"`);
+      console.log("🔢 ID Vektor: ${item.id}");
       console.log(
-        `📍 Koordinat Vektor (3 angka pertama): [${item.embedding.slice(0, 3)}...]`,
+        `📍 Koordinat Vektor (10 angka pertama): [${item.embedding.slice(0, 10).join(", ")} ...]`,
       );
       console.log(`🗂️ Metadata: ${JSON.stringify(item.metadata)}`);
       console.log("-------------------------------------------");

@@ -36,8 +36,8 @@ const privatBenefits = [
 const privatDetails = [
   { icon: GoStack, title: "Jenjang", description: "Semua Jenjang (SD, SMP, dan SMA)" },
   { icon: MdOutlineLibraryBooks, title: "Mata Pelajaran", description: "Matematika, Fisika, Kimia, Bahasa, dll." },
-  { icon: CiClock1, title: "Durasi Sesi", description: "90 atau 120 Menit (Dapat Disesuaikan)" },
-  { icon: MdGroup, title: "Tipe Kelas", description: "1 Siswa per 1 Tutor (atau Grup Kecil)" },
+  { icon: CiClock1, title: "Durasi Sesi", description: "60 atau 120 Menit (Dapat Disesuaikan)" },
+  { icon: MdGroup, title: "Tipe Kelas", description: "1 Siswa per 1 Tutor" },
   { icon: IoLocationOutline, title: "Lokasi Belajar", description: "Di Griya Sinau Syahir atau di Rumah Siswa" },
   { icon: PiCashRegister, title: "Pendaftaran", description: "Hubungi kami untuk penjadwalan." },
 ];

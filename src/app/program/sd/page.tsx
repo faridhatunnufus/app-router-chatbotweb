@@ -33,8 +33,8 @@ const sdBenefits = [
 const sdDetails = [
   { icon: GoStack, title: "Jenjang", description: "7 - 13 Tahun (Kelas 1-6 SD)" },
   { icon: CiClock1, title: "Durasi Sesi", description: "60 Menit / pertemuan" },
-  { icon: MdDateRange, title: "Durasi Program", description: "Paket 1 bulan, 3 bulan, 6 bulan" },
-  { icon: MdGroup, title: "Tipe Kelas", description: "Kelas Reguler & Privat" },
+  { icon: MdDateRange, title: "Durasi Program", description: "Satu bulan" },
+  { icon: MdGroup, title: "Tipe dan Kapasitas Kelas", description: "Kelas Reguler & Privat. Kapasitas 15-20 anak" },
   { icon: MdOutlineLibraryBooks, title: "Mata Pelajaran", description: "Matematika, IPA, B. Indonesia, B. Inggris" },
   { icon: PiCashRegister, title: "Pendaftaran", description: "Hubungi kami untuk jadwal kelas yang tersedia." },
 ];

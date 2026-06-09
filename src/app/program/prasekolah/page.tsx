@@ -36,7 +36,7 @@ const praSekolahDetails: DetailProps[] = [
   { icon: FaChildReaching, title: "Usia", description: "4 - 6 Tahun" },
   { icon: CiClock1, title: "Durasi Kelas", description: "60 Menit / pertemuan" },
   { icon: MdDateRange, title: "Durasi Program", description: "Satu bulan" },
-  { icon: MdGroups, title: "Kapasitas", description: "15-20 anak" },
+  { icon: MdGroups, title: "Kapasitas", description: "10-15 anak" },
   { icon: IoLocationOutline, title: "Lokasi", description: "Griya Sinau Syahir" },
   { icon: PiCashRegister, title: "Tipe Kelas", description: "Umum" },
   /* Tambahkan Kolom Harga, ganti ikon tipe kelas*/

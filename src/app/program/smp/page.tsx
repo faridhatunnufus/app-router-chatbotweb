@@ -39,7 +39,7 @@ const smpBenefits: BenefitType[] = [
 ];
 
 const smpDetails: DetailProps[] = [
-  { icon: MdSchool, title: "Tingkat", description: "Kelas 7, 8, & 9 SMP" },
+  { icon: MdSchool, title: "Tingkat", description: "Kelas 7, 8, 9 SMP" },
   {
     icon: CiClock1,
     title: "Durasi Kelas",
@@ -52,8 +52,8 @@ const smpDetails: DetailProps[] = [
   },
   {
     icon: MdGroups,
-    title: "Tipe",
-    description: "Kelompok Kecil (Maks. 10-15 anak per kelas)",
+    title: "Tipe dan Kapasitas Kelas",
+    description: "Kelas Reguler & Privat. Kapasitas 15-20 anak",
   },
   {
     icon: IoLocationOutline,

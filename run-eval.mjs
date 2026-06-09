@@ -1,76 +1,126 @@
 import promptfoo from "promptfoo";
-import dotenv from "dotenv";
 import fs from "fs";
-
-// Memuat variabel dari .env
-dotenv.config();
+import path from "path";
+import testDataset from "./src/knowledge/evaluasi/dataset-uji.json" with { type: "json" };
 
 async function main() {
-  console.log("🚀 Memulai Evaluasi Riset...");
+  console.log("🚀 Starting Evaluation in Batch Sessions...");
 
-  const results = await promptfoo.evaluate({
-    providers: [
-      {
-        id: "google:gemini-2.5-flash",
-        config: {
-          apiKey: process.env.GOOGLE_API_KEY,
-          temperature: 0.2,
-        },
-      },
-    ],
-    prompts: [
-      "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}} api key: ${env.GOOGLE_API_KEY}",
-    ],
-    // Test cases
-    tests: [
-      {
+  const fullTextContent = fs.readFileSync(
+    "./src/knowledge/evaluasi/data-bimbel.txt",
+    "utf-8",
+  );
+  const documentLines = fullTextContent.split("\n");
+
+  const outputDirectory = "./results"; 
+
+  // Otomatis membuat folder results jika folder tersebut belum ada
+  if (!fs.existsSync(outputDirectory)) {
+    fs.mkdirSync(outputDirectory);
+  }
+
+  // Kedua file sekarang ditempatkan di dalam folder yang sama
+  const tempFilePath = path.join(outputDirectory, "temp-results.json");
+  const finalFilePath = path.join(outputDirectory, "final-results.json");
+  // =========================================================================
+
+  // Reset temporary file at the beginning of the run jika ada sisa tes sebelumnya
+  if (fs.existsSync(tempFilePath)) {
+    fs.unlinkSync(tempFilePath);
+  }
+
+  const batchSize = 5;
+  const totalQuestions = testDataset.length;
+  let accumulatedResults = [];
+
+  for (let i = 0; i < totalQuestions; i += batchSize) {
+    const currentBatch = testDataset.slice(i, i + batchSize);
+    const sessionNumber = Math.floor(i / batchSize) + 1;
+
+    console.log(
+      `\n📦 Running Session ${sessionNumber} (Questions ${i + 1} to ${Math.min(i + batchSize, totalQuestions)})...`,
+    );
+
+    const batchTestCases = currentBatch.map((item) => {
+      const matchedLine = documentLines.find((line) =>
+        line.toLowerCase().includes(item.expect.toLowerCase()),
+      );
+      const targetContext = matchedLine
+        ? matchedLine.trim()
+        : `Related information: ${item.expect}`;
+
+      return {
         vars: {
-          question: "bagaimana cara mendaftar di bimbel ini?",
-          context:
-            "Pendaftaran dilakukan melalui google formulir pada laman https://forms.gle/hkqKtD3m1jaTLrPe6, lalu konfirmasi pendaftaran dan pembayaran ke kontak whatsapp 085868147285",
+          question: item.q,
+          context: targetContext,
         },
         assert: [
-          { type: "icontains", value: "https://forms.gle/hkqKtD3m1jaTLrPe6" },
-          { type: "icontains", value: "085868147285" },
+          {
+            type: "icontains",
+            value: item.expect,
+          },
         ],
-      },
-      {
-        vars: {
-          question: "Berapa biaya bulanan kelas umum?",
-          context: "Biaya bulanan kelas umum adalah Rp 100.000.",
+      };
+    });
+
+    const batchResults = await promptfoo.evaluate({
+      writeLatestResults: true,
+      maxConcurrency: 2,
+      providers: [
+        {
+          id: "google:gemini-2.5-flash",
+          config: {
+            apiKey: "AQ.Ab8RN6K3lyLSVTi8AZJtvYxwcjyWspSkZqInMyrmWPw7qxKwpw",
+            temperature: 0.2,
+          },
         },
-        assert: [{ type: "icontains", value: "100.000" }],
-      },
-      {
-        vars: {
-          question: "Di mana lokasi bimbelnya?",
-          context: "Lokasi di Desa Sawangan, Kec. Jeruklegi, Cilacap.",
-        },
-        assert: [{ type: "icontains", value: "Jeruklegi" }],
-      },
-    ],
-  });
+      ],
+      prompts: [
+        "Anda adalah CS Griya Sinau Syahir. Gunakan data: {{context}} untuk menjawab: {{question}}",
+      ],
+      tests: batchTestCases,
+    });
 
-  console.log("✅ Evaluasi Selesai!");
+    const sessionDetails = batchResults.results.map((res) => ({
+      question: res.vars.question,
+      context: res.vars.context,
+      response: res.response?.output || "No Response",
+      success: res.success,
+      latencyMs: res.latencyMs,
+    }));
 
-  // Menampilkan hasil pada terminal dalam format tabel
-  const summary = results.results.map((r, index) => {
-    const questionText =
-      r.vars?.question || r.testCase?.vars?.question || "N/A";
+    accumulatedResults = [...accumulatedResults, ...sessionDetails];
 
-    return {
-      No: index + 1,
-      Question: questionText,
-      Success: r.success ? "✅ PASS" : "❌ FAIL",
-      Output: r.response?.output?.replace(/\n/g, " ").substring(0, 60) + "...",
-    };
-  });
+    // Simpan data akumulasi ke file temporary di folder results
+    fs.writeFileSync(
+      tempFilePath,
+      JSON.stringify(accumulatedResults, null, 2),
+      "utf-8",
+    );
+    console.log(
+      `💾 Session ${sessionNumber} saved and accumulated to temporary file.`,
+    );
 
-  console.table(summary);
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+  }
 
-  const reportName = `hasil-riset-${new Date().getTime()}.json`;
-  fs.writeFileSync(reportName, JSON.stringify(results, null, 2));
-  console.log(`\n📄 Data detail disimpan ke: ${reportName}`);
+  // Simpan laporan akhir (final) ke folder results
+  fs.writeFileSync(
+    finalFilePath,
+    JSON.stringify(accumulatedResults, null, 2),
+    "utf-8",
+  );
+
+  // Hapus file temporary yang ada di dalam folder results agar bersih
+  if (fs.existsSync(tempFilePath)) {
+    fs.unlinkSync(tempFilePath);
+  }
+
+  console.log("\n=======================================================");
+  console.log(
+    `✅ All sessions completed! Final results saved to: ${finalFilePath}`,
+  );
+  console.log("=======================================================");
 }
 
 main().catch(console.error);

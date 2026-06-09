@@ -1,0 +1,14 @@
+[
+  {
+    "q": "Siapa nama pendiri dari Bimbingan Belajar Griya Sinau Syahir?",
+    "expect": "Tati Mei Lina Setyowati"
+  },
+  {
+    "q": "Kapan lembaga bimbingan belajar ini resmi didirikan?",
+    "expect": "01 Februari 2022"
+  },
+  {
+    "q": "Di mana alamat kantor pusat dari Griya Sinau Syahir?",
+    "expect": "Kecamatan Jeruklegi, Kabupaten Cilacap"
+  }
+]
