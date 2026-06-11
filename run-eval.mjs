@@ -33,6 +33,8 @@ async function main() {
 
   // TAHAP BATCHING DAN RETRIEVAL
 
+  //TAHAP BATCHING
+
   const batchSize = 5;
   const totalQuestions = testDataset.length;
   let accumulatedResults = [];
@@ -44,6 +46,8 @@ async function main() {
     console.log(
       `\n📦 Running Session ${sessionNumber} (Questions ${i + 1} to ${Math.min(i + batchSize, totalQuestions)})...`,
     );
+
+    // RETRIEVAL
 
     const batchTestCases = currentBatch.map((item) => {
       const matchedLine = documentLines.find((line) =>
