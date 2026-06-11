@@ -35,7 +35,8 @@ export async function POST(req: Request) {
     console.log(`🔍 Pertanyaan User: "${message}"`);
 
     // Mencari 2 dokumen paling mirip beserta skornya
-    const results = await vectorStore.similaritySearchWithScore(message, 2);
+    // const results = await vectorStore.similaritySearchWithScore(message, 2);
+    const results = await vectorStore.similaritySearchVectorWithScore(queryVector, 2);
 
     console.log(`\nFound ${results.length} relevant chunks:`);
 
