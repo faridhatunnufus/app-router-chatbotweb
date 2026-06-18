@@ -42,19 +42,14 @@ export async function POST(req: Request) {
       console.log("-------------------------------------------");
     });
 
-    // =========================================================
-    // 🔀 PERCABANGAN KONDISI: OUT OF CONTEXT DETECTION
-    // =========================================================
-    // Catatan: Pada MemoryVectorStore, semakin besar skor berarti jarak semakin jauh (tidak mirip).
-    // Batas threshold 0.70 dapat disesuaikan kembali berdasarkan hasil uji coba akurasi Anda.
-    const THRESHOLD_SCORE = 0.45;
-    const isOutOfContext =
-      results.length === 0 || results[0][1] > THRESHOLD_SCORE;
+    const THRESHOLD_SCORE = 0.4; // Batas bawah aman
 
-    if (isOutOfContext) {
-      console.log(
-        "⚠️ KONDISI: Pertanyaan di luar konteks (Out of Context) terdeteksi.",
-      );
+    const isDataEmpty = results.length === 0;
+    // Pertanyaan dianggap LUAR KONTEKS jika skornya KURANG DARI 0.40
+    const isOutOfContext = !isDataEmpty && results[0][1] < THRESHOLD_SCORE;
+
+    if (isDataEmpty || isOutOfContext) {
+      console.log("⚠️ KONDISI: Terdeteksi luar konteks atau data kosong.");
       return NextResponse.json({
         answer:
           "Maaf, informasi yang Anda tanyakan berada di luar lingkup bimbingan belajar Griya Sinau Syahir. Silakan ajukan pertanyaan seputar info bimbel seperti program kelas, fasilitas, biaya, atau alur pendaftaran kami.",
