@@ -60,12 +60,12 @@
     "jam_operasional": "10.00 - 20.30 WIB"
   },
   "prosedur_pendaftaran": {
+    "biaya_pendaftaran_baru": "Rp 30.000 (Hanya dibayarkan 1 kali di awal pendaftaran)",
     "tahapan": [
       {
         "langkah": 1,
         "judul": "Isi Formulir Online",
-        "deskripsi": 
-        "Orang tua atau calon siswa mengisi data diri dasar secara digital melalui formulir pendaftaran online secara lengkap dan akurat via tautan/tombol yang tersedia di website."
+        "deskripsi": "Orang tua atau calon siswa mengisi data diri dasar secara digital melalui formulir pendaftaran online secara lengkap dan akurat via tautan/tombol yang tersedia di website."
       },
       {
         "langkah": 2,

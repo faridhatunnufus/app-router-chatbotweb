@@ -50,8 +50,8 @@ async function runIndexing() {
 
     // --- FASE 1: LOADING & CHUNKING JSON---
     const splitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 600,
-      chunkOverlap: 100,
+      chunkSize: 1200,
+      chunkOverlap: 200,
       separators: ["\n\n", "\n", " ", ""],
     });
 

@@ -21,6 +21,12 @@ export async function POST(req: Request) {
 
     console.log(`✅ Pertanyaan berhasil diubah menjadi Vektor.`);
     console.log(`Dimensi Vektor Pertanyaan: ${queryVector.length} angka`);
+    console.log(
+      `🔢 Sample Vektor (100 angka pertama): [${queryVector
+        .slice(0, 100)
+        .map((n) => n.toFixed(6))
+        .join(", ")}, ...]`,
+    );
     console.log("-------------------------------------------\n");
 
     // --- FASE 4: RETRIEVAL ---
@@ -28,10 +34,10 @@ export async function POST(req: Request) {
     console.log("      FASE RETRIEVAL (SEARCHING...)     ");
     console.log("===========================================");
 
-    // Mencari 2 dokumen paling mirip beserta skornya
+    // Mengambil 4 dokumen teratas (k diubah menjadi 4 agar data pendaftaran utuh)
     const results = await vectorStore.similaritySearchVectorWithScore(
       queryVector,
-      2,
+      4,
     );
 
     console.log(`\nFound ${results.length} relevant chunks:`);
@@ -45,60 +51,89 @@ export async function POST(req: Request) {
     const THRESHOLD_SCORE = 0.4; // Batas bawah aman
 
     const isDataEmpty = results.length === 0;
-    // Pertanyaan dianggap LUAR KONTEKS jika skornya KURANG DARI 0.40
     const isOutOfContext = !isDataEmpty && results[0][1] < THRESHOLD_SCORE;
 
     if (isDataEmpty || isOutOfContext) {
       console.log("⚠️ KONDISI: Terdeteksi luar konteks atau data kosong.");
       return NextResponse.json({
         answer:
-          "Maaf, informasi yang Anda tanyakan berada di luar lingkup bimbingan belajar Griya Sinau Syahir. Silakan ajukan pertanyaan seputar info bimbel seperti program kelas, fasilitas, biaya, atau alur pendaftaran kami.",
+          "Maaf, informasi yang Anda tanyakan berada di luar lingkup bimbingan belajar Griya Sinau Syahir. Silakan ajukan pertanyaan seputar info bimbel.",
       });
     }
 
-    const context = results.map(([doc]) => doc.pageContent).join("\n");
+    const context = results.map(([doc]) => doc.pageContent).join("\n\n");
     console.log("✅ Context Berhasil Disusun untuk AI.");
 
-    // --- FASE 5: AUGMENTATION (Penggabungan) ---
+    // =========================================================
+    // 📚 LOG TERMINAL - FASE 5: AUGMENTATION (Penggabungan)
+    // =========================================================
+    console.log("\n===========================================");
+    console.log("           FASE 5: AUGMENTATION            ");
+    console.log("===========================================");
+    console.log("📚 DATA REFERENSI (CONTEXT) YANG DIKIRIM KE AI:");
+    console.log("-------------------------------------------");
+    console.log(context);
+    console.log("-------------------------------------------");
+    console.log(`❓ PERTANYAAN PENGGUNA:\n${message}`);
+    console.log("-------------------------------------------\n");
+
     const prompt = `
   Anda adalah Customer Service resmi Griya Sinau Syahir yang ramah, profesional, dan solutif.
-  
-  TUGAS ANDA:
-  Ubah DATA REFERENSI di bawah ini menjadi jawaban yang mengalir alami (Human-like). 
-  JANGAN gunakan format daftar (list) atau simbol bintang (**) yang berlebihan seperti di data mentah.
-  
-  FORMAT JAWABAN:
-  1. Mulailah dengan sapaan hangat.
-  2. Berikan jawaban singkat dan padat di kalimat awal.
-  3. Berikan penjelasan lebih detail dalam bentuk PARAGRAF yang nyaman dibaca.
-  4. Akhiri dengan tawaran bantuan atau ajakan untuk bertanya lagi.
 
-  ATURAN KETAT:
+  TUGAS ANDA:
+  Ubah DATA REFERENSI di bawah ini menjadi jawaban yang rapi dan mudah dibaca di tampilan teks polos (plain text, tidak ada rendering markdown).
+
+  ATURAN FORMAT JAWABAN (WAJIB DIIKUTI):
+
+  1. Sapaan pembuka: singkat saja, maksimal beberapa kata (contoh: "Baik,", "Tentu,", "Halo, terkait pertanyaan Anda,"). Jangan bertele-tele.
+
+  2. Tentukan jumlah poin informasi dalam jawaban:
+     - Jika jawaban HANYA berisi SATU informasi/poin tunggal, tulis sebagai KALIMAT BIASA mengalir. JANGAN paksa jadi list.
+     - Jika jawaban berisi BEBERAPA poin informasi yang SEJAJAR, gunakan bullet dengan simbol "•" di awal baris.
+     - Jika jawaban berisi BEBERAPA poin yang berurutan/prosedural (seperti tahapan pendaftaran), gunakan format penomoran "1." "2." "3." dst di awal baris.
+
+  3. DILARANG KERAS membuat list bersarang (nested list). Jika satu poin punya sub-informasi, gabungkan menjadi satu kalimat utuh di dalam poin yang sama.
+
+  4. DILARANG KERAS menggunakan sintaks markdown apa pun (**bold**, # heading, dsb). Gunakan HANYA simbol "•" atau angka biasa.
+
+  5. WAJIB MEMBERIKAN SATU BARIS KOSONG (ENTER 2 KALI) di antara setiap poin penomoran, setiap bullet, dan setiap paragraf penjelasan. Jangan menempelkan teks berurutan tanpa jeda baris kosong.
+
+  6. Tutup jawaban dengan kalimat penutup singkat (contoh: "Ada lagi yang ingin ditanyakan?").
+
+  ATURAN KETAT (AKURASI):
   1. Jawablah HANYA berdasarkan DATA REFERENSI yang diberikan.
-  2. DILARANG KERAS berasumsi atau mengarang informasi berdasarkan nama lembaga.
+  2. DILARANG KERAS berasumsi atau mengarang informasi.
 
   DATA REFERENSI:
   ${context}
 
-  PERTANYAAN PENGGUNA: 
+  PERTANYAAN PENGGUNA:
   ${message}
-
-  JAWABAN:
 `;
 
     // --- FASE 6: GENERATION ---
     const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.5-flash",
+      generationConfig: { temperature: 0.2 },
+    });
 
     const result = await model.generateContent(prompt);
     const responseText = result.response.text();
 
-    console.log("--- HASIL FASE GENERATION: SUCCESS ---");
+    // =========================================================
+    // 🤖 LOG TERMINAL - FASE 6: GENERATION
+    // =========================================================
+    console.log("\n===========================================");
+    console.log("            FASE 6: GENERATION             ");
+    console.log("===========================================");
+    console.log("🤖 JAWABAN CHATBOT YANG DIHASILKAN:");
+    console.log("-------------------------------------------");
+    console.log(responseText);
+    console.log("-------------------------------------------\n");
+
     return NextResponse.json({ answer: responseText });
   } catch (error: any) {
-    // =========================================================
-    // ❌ KONDISI: PENANGANAN API ERROR / INTERNAL SERVER ERROR
-    // =========================================================
     console.error("\n--- ❌ ERROR DI FASE GENERATION ❌ ---");
     console.error("Pesan Eror:", error.message || error);
     console.log("---------------------------------------\n");
