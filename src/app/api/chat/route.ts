@@ -37,7 +37,7 @@ export async function POST(req: Request) {
     // Mengambil 4 dokumen teratas (k diubah menjadi 4 agar data pendaftaran utuh)
     const results = await vectorStore.similaritySearchVectorWithScore(
       queryVector,
-      4,
+      3,
     );
 
     console.log(`\nFound ${results.length} relevant chunks:`);
