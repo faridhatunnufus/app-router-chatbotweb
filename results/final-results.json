@@ -1,23 +1,23 @@
 [
   {
-    "question": "Siapa nama pendiri dari Bimbingan Belajar Griya Sinau Syahir?",
-    "context": "Pendiri: Tati Mei Lina Setyowati, S.Pd.",
-    "response": "Halo! Dengan senang hati saya bantu.\n\nPendiri dari Bimbingan Belajar Griya Sinau Syahir adalah **Ibu Tati Mei Lina Setyowati, S.Pd.**\n\nAda lagi yang bisa saya bantu?",
-    "success": true,
-    "latencyMs": 42
+    "question": "Apakah Griya Sinau Syahir menjual seragam sekolah?",
+    "context": "Related information: tidak menyediakan / di luar layanan",
+    "response": "Halo!\n\nTerkait pertanyaan Anda apakah Griya Sinau Syahir menjual seragam sekolah, kami informasikan bahwa **Griya Sinau Syahir tidak menyediakan atau menjual seragam sekolah.** Layanan penjualan seragam sekolah berada di luar cakupan layanan utama kami.\n\nKami fokus pada penyediaan bimbingan belajar dan program pendidikan lainnya.\n\nApakah ada hal lain yang bisa kami bantu terkait layanan bimbingan belajar atau program kami?\n\nTerima kasih.",
+    "success": false,
+    "latencyMs": 5048
   },
   {
-    "question": "Kapan lembaga bimbingan belajar ini resmi didirikan?",
-    "context": "Tanggal Berdiri: 01 Februari 2022",
-    "response": "Halo! Terima kasih atas pertanyaannya.\n\nGriya Sinau Syahir resmi didirikan pada **01 Februari 2022**.\n\nSemoga informasi ini membantu! Jika ada pertanyaan lain, jangan ragu untuk menghubungi kami.",
-    "success": true,
-    "latencyMs": 42
+    "question": "Bisa bantu carikan resep masakan?",
+    "context": "Related information: di luar cakupan layanan bimbingan belajar",
+    "response": "Halo!\n\nTerima kasih atas pertanyaannya. Mohon maaf, untuk permintaan mencari resep masakan, hal tersebut berada **di luar cakupan layanan utama Griya Sinau Syahir**.\n\nKami fokus pada layanan bimbingan belajar untuk membantu siswa dalam mata pelajaran sekolah.\n\nNamun, Anda bisa dengan mudah menemukan berbagai resep masakan lezat di internet melalui mesin pencari seperti Google, atau di platform media sosial seperti YouTube dan Instagram, serta di banyak website kuliner.\n\nJika ada pertanyaan seputar bimbingan belajar atau mata pelajaran, jangan ragu untuk menghubungi kami kembali!\n\nTerima kasih.",
+    "success": false,
+    "latencyMs": 6134
   },
   {
-    "question": "Di mana alamat kantor pusat dari Griya Sinau Syahir?",
-    "context": "Alamat Pusat: Dusun Manggisan, Desa Sawangan, Kecamatan Jeruklegi, Kabupaten Cilacap, Jawa Tengah.",
-    "response": "Halo! Terima kasih atas pertanyaan Anda.\n\nAlamat kantor pusat Griya Sinau Syahir adalah di:\n**Dusun Manggisan, Desa Sawangan, Kecamatan Jeruklegi, Kabupaten Cilacap, Jawa Tengah.**\n\nSemoga informasi ini membantu! Ada lagi yang bisa kami bantu?\n\nHormat kami,\nCS Griya Sinau Syahir",
-    "success": true,
-    "latencyMs": 41
+    "question": "Apakah ada promo tiket konser di sini?",
+    "context": "Related information: tidak menyediakan / di luar layanan",
+    "response": "Halo! Terima kasih sudah menghubungi Griya Sinau Syahir.\n\nMengenai pertanyaan Anda tentang promo tiket konser, mohon maaf, kami **tidak menyediakan** layanan tersebut. Hal ini **di luar layanan** utama yang kami tawarkan di Griya Sinau Syahir.\n\nKami fokus pada layanan pendidikan dan bimbingan belajar.\n\nSemoga informasi ini membantu!",
+    "success": false,
+    "latencyMs": 4833
   }
 ]

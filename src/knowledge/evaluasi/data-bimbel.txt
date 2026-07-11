@@ -25,13 +25,13 @@ Tujuan:
 
 # 2. OPERASIONAL AKADEMIK
 Total Siswa Aktif: 100 siswa.
-Metode Pembelajaran: Self Directed Learning (melatih kemandirian anak).
+Metode Pembelajaran: Self Directed Learning
 Kualifikasi Pengajar: Rata-rata memiliki latar belakang pendidikan S1, SMA/SMK, maupun mahasiswa aktif yang sedang menempuh pendidikan perguruan tinggi.
 
 -----------------------------------------------------------
 
 Sistem Penentuan Tutor: 
-Pemilihan tutor disesuaikan dengan kompetensi latar belakang pendidikan pengajar (S1 atau mahasiswa aktif) dengan kebutuhan spesifik siswa, guna memastikan metode Self Directed Learning dapat berjalan dengan pendekatan yang personal dan tepat sasaran.
+Pemilihan tutor disesuaikan dengan kompetensi latar belakang pendidikan pengajar yaitu S1 atau mahasiswa aktif
 
 -----------------------------------------------------------
 
@@ -54,7 +54,8 @@ Siswa yang absen dapat mengikuti sesi pengganti pada hari lain di minggu yang sa
 -----------------------------------------------------------
 
 Kebijakan Absen Kelas Privat:
-Pembatalan atau pergeseran jadwal wajib diinfokan minimal satu hari sebelumnya agar tutor dapat menjadwalkan ulang kelas.
+Pembatalan jadwal : minimal satu hari sebelumnya
+Pergeseran jadwal wajib diinfokan minimal satu hari sebelumnya agar tutor dapat menjadwalkan ulang kelas.
 
 -----------------------------------------------------------
 
@@ -139,7 +140,7 @@ B. PROGRAM KELAS PRIVAT
    - Jenjang Pendidikan: Pra-Sekolah sampai SMA
    - Fokus Materi: Semua mata pelajaran sesuai jenjang sekolah siswa
    - Kisaran Biaya Bulanan (Biaya Bulanan Range): Rp 200.000
-   - Durasi per Sesi: 1.5 sampai 2 jam
+   - Durasi per sesi: 1.5 sampai 2 jam
    - Kapasitas Maksimal Kelas: 1 siswa (eksklusif)
    - Hari Operasional: Sangat fleksibel (Senin sampai Sabtu)
    - Jadwal Sesi Belajar: Menyesuaikan sepenuhnya dengan waktu luang siswa serta kesepakatan orang tua dengan tutor
@@ -151,8 +152,8 @@ B. PROGRAM KELAS PRIVAT
 A. Ketersediaan Layanan Hari Sabtu:
 Layanan pada hari Sabtu dibuka secara khusus hanya untuk program kelas privat, baik program privat di lokasi bimbel (privat_gss) maupun guru datang ke rumah (privat_rumah). Durasi belajar tetap mengacu pada standar reguler yaitu 1,5 hingga 2 jam per sesi, serta wajib menyesuaikan kesepakatan bersama yang telah dibuat antara pihak tutor dan orang tua siswa.
 
-B. Aturan dan Nominal Biaya Tambahan Jam (Overtime):
-- Nominal Tarif Tambahan: Rp 30.000 per jam.
+B. Aturan dan Nominal Biaya Tambahan Jam:
+- Nominal Tarif Tambahan: Rp 30.000 
 - Aturan Peruntukan Biaya Tambahan:
   1. Diberlakukan untuk siswa dari kelas umum yang ingin mengikuti sesi pembelajaran tambahan secara privat di luar tarif normal bulanan mereka.
   2. Diberlakukan untuk siswa dari kelas privat yang ingin mengajukan penambahan jam belajar di luar kuota atau durasi standar yang telah ditentukan.

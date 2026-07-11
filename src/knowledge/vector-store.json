@@ -3084,7 +3084,7 @@
         }
       }
     },
-    "id": "2c22fb6b-3560-4d81-8d83-f28b0e58e795"
+    "id": "dbb0673c-fa38-4842-90f6-b1f00e3d5be3"
   },
   {
     "content": "- Biaya yang sangat terjangkau namun tetap mempertahankan kualitas bimbingan belajar.\noperasional_akademik:\n   - total_siswa_aktif: 100 siswa\n   - metode_pembelajaran: Self directed learning\n   - kualifikasi_pengajar: Rata-rata memiliki latar belakang pendidikan S1, SMA/SMK, maupun mahasiswa aktif yang sedang menempuh pendidikan perguruan tinggi.\n   - sistem_penentuan_tutor: Pemilihan tutor disesuaikan dengan kompetensi latar belakang pendidikan pengajar (S1 atau mahasiswa aktif) dengan kebutuhan spesifik siswa, guna memastikan metode Self Directed Learning dapat berjalan dengan pendekatan yang personal dan tepat sasaran.\n   - laporan_perkembangan: Laporan perkembangan belajar siswa diberikan secara berkala melalui email dan pesan WhatsApp kepada orang tua, menginfokan materi yang telah dipelajari serta aspek kemampuan yang mengalami peningkatan.\n  fasilitas_bimbel:\n   - Ruang kelas yang bersih dan nyaman\n   - Meja belajar yang memadai\n   - Alat peraga edukatif terutama untuk program Calistung\n   - Modul atau bank soal yang relevan dengan kurikulum sekolah siswa\n  kebijakan_absen:",
@@ -6171,7 +6171,7 @@
         }
       }
     },
-    "id": "14307b38-8c30-4b63-a277-a947d1f793cc"
+    "id": "88537ca6-be2e-485f-bdba-a7d7a52275b2"
   },
   {
     "content": "- Meja belajar yang memadai\n   - Alat peraga edukatif terutama untuk program Calistung\n   - Modul atau bank soal yang relevan dengan kurikulum sekolah siswa\n  kebijakan_absen:\n     - kelas_umum: Siswa yang absen dapat mengikuti sesi pengganti pada hari lain di minggu yang sama jika kuota kelas masih tersedia.\n     - kelas_privat: Pembatalan atau pergeseran jadwal wajib diinfokan minimal satu hari sebelumnya agar tutor dapat menjadwalkan ulang kelas.\n  prestasi_dan_alumni:\n   - Peningkatan peringkat nilai rapor di sekolah.\n   - Kelolosan seleksi masuk SMP dan SMA negeri favorit di wilayah Cilacap, seperti SMA N 1 Cilacap.\n   - Peningkatan kemampuan dasar membaca dan menghitung pada anak usia dini secara cepat.\nmanajemen_pemasaran:\n  saluran_promosi:\n   - Word of Mouth (mulut ke mulut antar orang tua siswa)\n   - Facebook\n   - TikTok\n   - WhatsApp\n   - Platform Website\n   - konten_promosi: Fokus pada pembagian poster informasi serta dokumentasi visual yang menampilkan suasana pembelajaran kelas yang aktif dan kondusif.\n   - kendala_pemasaran: Pengelolaan promosi digital serta optimalisasi fungsi website saat ini dinilai masih belum maksimal.\nkontak_layanan:",
@@ -9258,7 +9258,7 @@
         }
       }
     },
-    "id": "0c4fbafb-74d2-4318-9e31-7f58fd4cb8a6"
+    "id": "685c824c-7846-4a59-8f44-9df32a775193"
   },
   {
     "content": "- kendala_pemasaran: Pengelolaan promosi digital serta optimalisasi fungsi website saat ini dinilai masih belum maksimal.\nkontak_layanan:\n   - whatsapp: 085868147285\n   - email: kutbusyahrir@gmail.com\n   - jam_operasional: 10.00 - 20.30 WIB\nprosedur_pendaftaran:\n   - biaya_pendaftaran_baru: Rp 30.000 (Hanya dibayarkan 1 kali di awal pendaftaran)\n  tahapan:\n     - langkah: 1\n     - judul: Isi Formulir Online\n     - deskripsi: Orang tua atau calon siswa mengisi data diri dasar secara digital melalui formulir pendaftaran online secara lengkap dan akurat via tautan/tombol yang tersedia di website.\n     - langkah: 2\n     - judul: Konfirmasi & Pembayaran\n    deskripsi:\n     - Tim administrasi akan menghubungi pendaftar via WhatsApp untuk konfirmasi data serta memberikan instruksi pembayaran biaya pendaftaran dan SPP bulan pertama.\n     - Pembayaran dapat dilakukan secara cash di tempat bimbel atau via transfer bank.\n     - langkah: 3\n     - judul: Selamat Bergabung & Penyerahan Berkas\n    deskripsi:\n     - Setelah pembayaran terkonfirmasi, siswa resmi terdaftar. Informasi jadwal les akan dimasukkan ke dalam grup WhatsApp khusus.",
@@ -12345,7 +12345,7 @@
         }
       }
     },
-    "id": "0c4297aa-58ca-4ec0-a1cb-4c75c5774736"
+    "id": "eeeeb39f-f770-4df0-8dbb-762d1c860513"
   },
   {
     "content": "- judul: Selamat Bergabung & Penyerahan Berkas\n    deskripsi:\n     - Setelah pembayaran terkonfirmasi, siswa resmi terdaftar. Informasi jadwal les akan dimasukkan ke dalam grup WhatsApp khusus.\n     - Pada hari pertama masuk, wajib menyerahkan dokumen fisik untuk arsip internal.\n    berkas_fisik_wajib:\n       - orang_tua: Fotokopi KTP\n      peserta_didik:\n       - Akta Kelahiran\n       - Kartu Keluarga\ntestimoni_siswa:\n   - nama: Putriani Nabila\n   - alumni_sekolah: SMA N 1 Cilacap\n  content:\n   - Testimoni dari siswi bernama Putriani Nabila yang diterima di SMA N 1 Cilacap.\n   - Ia merasa sangat senang belajar di Griya Sinau Syahir karena teman-temannya suportif dan pengajarnya sangat keren dalam menjelaskan materi hingga paham.",
@@ -15432,7 +15432,7 @@
         }
       }
     },
-    "id": "4f7969a9-9953-4ad7-80c2-6a62bbb6c1ea"
+    "id": "db1c2ee3-06ef-4051-95fc-472625c69388"
   },
   {
     "content": "program_kelas:\n   - id: umum_pra_sekolah\n   - tipe_kelas: Umum\n   - jenjang: Pra-Sekolah (TK/PAUD)\n   - fokus_materi: Calistung (Baca, Tulis, Hitung)\n   - estimasi_usia: 4-6 tahun\n   - biaya_bulanan: 100000\n   - durasi_per_sesi_menit: 60\n   - kapasitas_maksimal_siswa: 15 siswa\n   - hari_operasional: Senin - Jumat\n   - jadwal_sesi: Siang hingga sore pukul 13.00 - 16.00\n   - id: umum_sd\n   - tipe_kelas: Umum\n   - jenjang: SD\n   - fokus_materi: Semua mata pelajaran\n   - estimasi_usia: 7-13 tahun\n   - biaya_bulanan: 100000\n   - durasi_per_sesi_menit: 60\n   - kapasitas_maksimal_siswa: 20 siswa\n   - hari_operasional: Senin - Jumat\n   - jadwal_sesi: Siang hingga sore pukul 13.00 - 16.00\n   - id: umum_smp\n   - tipe_kelas: Umum\n   - jenjang: SMP\n   - fokus_materi: Semua mata pelajaran\n   - estimasi_usia: 13-17 tahun\n   - biaya_bulanan: 100000\n   - durasi_per_sesi_menit: 60\n   - kapasitas_maksimal_siswa: 20 siswa\n   - hari_operasional: Senin - Jumat\n   - jadwal_sesi: Sore hingga malam pukul 16.00 - 19.30\n   - id: umum_sma\n   - tipe_kelas: Umum\n   - jenjang: SMA\n   - fokus_materi: Semua mata pelajaran\n   - estimasi_usia: 17-19 tahun\n   - biaya_bulanan: 100000\n   - durasi_per_sesi_menit: 60",
@@ -18519,7 +18519,7 @@
         }
       }
     },
-    "id": "b1a4abc7-5914-41c6-8810-5d9313df37bc"
+    "id": "42b08cc8-4120-4f00-b4a0-be60613675bc"
   },
   {
     "content": "- id: umum_sma\n   - tipe_kelas: Umum\n   - jenjang: SMA\n   - fokus_materi: Semua mata pelajaran\n   - estimasi_usia: 17-19 tahun\n   - biaya_bulanan: 100000\n   - durasi_per_sesi_menit: 60\n   - kapasitas_maksimal_siswa: 20 siswa\n   - hari_operasional: Senin - Jumat\n   - jadwal_sesi: Sore hingga malam pukul 16.00 - 19.30\n   - id: privat_gss\n   - tipe_kelas: Privat Di Lokasi Bimbel Griya Sinau Syahir\n   - jenjang: Pra-Sekolah sampai SMA\n   - fokus_materi: Semua mata pelajaran sesuai jenjang sekolah\n   - biaya_bulanan: 120000\n   - durasi_per_sesi_jam: 1.5 - 2 jam\n   - kapasitas_maksimal_siswa: 5 siswa\n   - hari_operasional: Senin - Jumat (Sabtu opsional berdasarkan kesepakatan)\n   - jadwal_sesi: Lebih fleksibel / Menyesuaikan kesepakatan tutor dan orang tua\n   - id: privat_rumah\n   - tipe_kelas: Privat (Guru ke Rumah)\n   - jenjang: Pra-Sekolah sampai SMA\n   - fokus_materi: Semua mata pelajaran sesuai jenjang sekolah\n   - biaya_bulanan_range: 200 ribu\n   - durasi_per_sesi_jam: 1.5 - 2 jam\n   - kapasitas_maksimal_siswa: 1 siswa\n   - hari_operasional: Sangat fleksibel (Senin - Sabtu)\n   - jadwal_sesi: Menyesuaikan sepenuhnya dengan waktu luang siswa & kesepakatan orang tua dengan tutor",
@@ -21606,7 +21606,7 @@
         }
       }
     },
-    "id": "d03d0898-17bf-41b0-a086-e3daac77227f"
+    "id": "3a725a9a-8bf9-4637-b6cb-c7dabed4205d"
   },
   {
     "content": "- kapasitas_maksimal_siswa: 1 siswa\n   - hari_operasional: Sangat fleksibel (Senin - Sabtu)\n   - jadwal_sesi: Menyesuaikan sepenuhnya dengan waktu luang siswa & kesepakatan orang tua dengan tutor\nkebijakan_khusus_sabtu_dan_tambahan_jam:\n  ketersediaan_hari_sabtu:\n   - Layanan hari Sabtu dibuka khusus untuk program privat baik di lokasi bimbel maupun guru ke rumah dengan durasi tetap 1,5 hingga 2 jam\n   - menyesuaikan kesepakatan bersama antara tutor dan orang tua.\n  biaya_tambahan_aturan:\n     - nominal: 30000\n     - satuan: per jam\n    peruntukan:\n     - Siswa kelas umum yang ingin mengikuti pembelajaran privat di luar tarif normal bulanan\n     - Siswa kelas privat yang ingin menambah jam belajar di luar kuota/durasi standar",
@@ -24693,6 +24693,6 @@
         }
       }
     },
-    "id": "5788e657-929a-4a59-a75a-a6cf21e0e007"
+    "id": "c6252c74-a379-474f-97f6-2f9c97b91c91"
   }
 ]

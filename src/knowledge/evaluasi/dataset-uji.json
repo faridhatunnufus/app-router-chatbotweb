@@ -1,14 +1,14 @@
 [
   {
-    "q": "Siapa nama pendiri dari Bimbingan Belajar Griya Sinau Syahir?",
-    "expect": "Tati Mei Lina Setyowati"
+    "q": "Apakah Griya Sinau Syahir menjual seragam sekolah?",
+    "expect": "tidak menyediakan / di luar layanan"
   },
   {
-    "q": "Kapan lembaga bimbingan belajar ini resmi didirikan?",
-    "expect": "01 Februari 2022"
+    "q": "Bisa bantu carikan resep masakan?",
+    "expect": "di luar cakupan layanan bimbingan belajar"
   },
   {
-    "q": "Di mana alamat kantor pusat dari Griya Sinau Syahir?",
-    "expect": "Kecamatan Jeruklegi, Kabupaten Cilacap"
+    "q": "Apakah ada promo tiket konser di sini?",
+    "expect": "tidak menyediakan / di luar layanan"
   }
 ]
