@@ -42,3 +42,4 @@ next-env.d.ts
 
 # script
 run-eval.mjs
+run-promptfoo.mjs
