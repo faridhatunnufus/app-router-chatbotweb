@@ -126,9 +126,9 @@ const Chatbot = () => {
         </div>
       )}
 
-      {/* <button className={styles.chatButton} onClick={() => setIsOpen(!isOpen)}>
+      <button className={styles.chatButton} onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? "✕" : "💬"}
-      </button> */}
+      </button>
     </div>
   );
 };
