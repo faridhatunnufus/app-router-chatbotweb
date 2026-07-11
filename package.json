@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node --env-file=.env scripts/indexing.mjs",
+    "build": "next build && node scripts/indexing.mjs",
+    "build:local": "next build && node --env-file=.env scripts/indexing.mjs",
     "start": "next start",
     "lint": "next lint",
     "run-eval": "node run-promptfoo.mjs"
