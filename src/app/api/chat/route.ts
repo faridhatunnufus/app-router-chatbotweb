@@ -3,6 +3,7 @@ import { getVectorStore } from "@/lib/rag";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { GoogleGenerativeAIEmbeddings } from "@langchain/google-genai";
 
+import { generateWithRotation } from "@/lib/gemini-rotator";
 export async function POST(req: Request) {
   try {
     const { message } = await req.json();
@@ -112,14 +113,7 @@ export async function POST(req: Request) {
 `;
 
     // --- FASE 6: GENERATION ---
-    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
-    const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-flash",
-      generationConfig: { temperature: 0.2 },
-    });
-
-    const result = await model.generateContent(prompt);
-    const responseText = result.response.text();
+    const responseText = await generateWithRotation(prompt);
 
     // =========================================================
     // 🤖 LOG TERMINAL - FASE 6: GENERATION
