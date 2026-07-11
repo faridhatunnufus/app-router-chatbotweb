@@ -86,7 +86,6 @@ async function main() {
         {
           id: "google:gemini-2.5-flash",
           config: {
-            // apiKey: "-",
             temperature: 0.2,
           },
         },
