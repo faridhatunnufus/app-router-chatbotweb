@@ -40,7 +40,7 @@ async function runIndexing() {
   const outputPath = path.join(knowledgePath, "vector-store.json");
 
   console.log("\n=================================================");
-  console.log(" 🚀 START FASE INDEXING (PROSES POST-BUILD) ");
+  console.log(" 🚀🚀 START FASE INDEXING (PROSES POST-BUILD) ");
   console.log("=================================================");
 
   try {
