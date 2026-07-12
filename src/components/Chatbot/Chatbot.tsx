@@ -55,7 +55,7 @@ const Chatbot = () => {
       setMessages((prev) => {
         const newMsgs = [...prev];
         newMsgs[newMsgs.length - 1].content =
-          "Maaf, sistem sedang sibuk. Coba lagi ya!";
+          "Maaf, sistem sedang sibuk. Coba lagi yaa!";
         return newMsgs;
       });
     } finally {
